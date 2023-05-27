@@ -1,6 +1,7 @@
 const User = require("../../model/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const Uid = require("../../model/Uid");
 
 const handleLogin = async (req, res) => {
   const { username, password } = req.body;
@@ -8,7 +9,7 @@ const handleLogin = async (req, res) => {
     return res
       .status(400)
       .json({ message: "Username and password fields are required" });
-  const foundUser = await User.findOne({ username }).exec();
+  const foundUser = await User.findOne({ email:username }).exec();
   if (!foundUser)
     return res.status(401).json({ message: "Invalid username or password" });
 
@@ -29,6 +30,7 @@ const handleLogin = async (req, res) => {
       { refreshToken: refresh_token },
       { new: true }
     ).exec();
+    await Uid.findOneAndUpdate({ uid: currentUser.uid }, { active: true });
     res.cookie("jwt", refresh_token, {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,

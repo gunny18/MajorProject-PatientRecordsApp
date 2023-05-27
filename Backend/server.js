@@ -11,7 +11,6 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const { verifyJWT } = require("./middleware/verifyJWT");
 
-
 // connect to DB
 connectDB();
 
@@ -44,6 +43,9 @@ app.use("/api/login", require("./routes/auth/auth"));
 app.use("/api/refresh", require("./routes/auth/refresh"));
 app.use("/api/logout", require("./routes/auth/logout"));
 app.use("/api/patients", require("./routes/patients/patient"));
+app.use("/api/hospital/register", require("./routes/hospital/register"));
+app.use("/api/hospital/login", require("./routes/hospital/login"));
+app.use("/api/hospital/logout", require("./routes/hospital/logout"));
 app.use(verifyJWT);
 app.use("/api/users", require("./routes/users/testUsers"));
 

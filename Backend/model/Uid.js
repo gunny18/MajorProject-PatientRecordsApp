@@ -6,6 +6,10 @@ const uidSchema = new Schema({
     type: String,
     required: true,
   },
+  active: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("Uid", uidSchema);
