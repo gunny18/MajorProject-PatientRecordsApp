@@ -14,13 +14,16 @@ const registerUser = async (req, res) => {
     return res
       .status(409)
       .json({ message: "User with specified Uid already exists" });
-  const { username, password } = req.body;
-  if (!username || !password)
+  const { username, email, password } = req.body;
+  if (!username || !password || !email)
     return res
       .status(400)
-      .json({ message: "Username and password is required" });
+      .json({ message: "Username, password and email is required" });
 
-  const duplicate = await User.findOne({ username: username }).exec();
+  const duplicate = await User.findOne({
+    username: username,
+    email: email,
+  }).exec();
   if (duplicate)
     return res.status(409).json({ message: "User already exists" });
 
@@ -29,6 +32,7 @@ const registerUser = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await User.create({
       username,
+      email,
       password: hashedPassword,
       uid,
     });

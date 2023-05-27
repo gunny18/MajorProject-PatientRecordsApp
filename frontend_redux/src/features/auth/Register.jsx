@@ -11,6 +11,7 @@ const Register = () => {
   const userRef = useRef();
 
   const [user, setUser] = useState("");
+  const [email,setEmail] = useState("")
   const [pwd, setPwd] = useState("");
 
   const [errMsg, setErrMsg] = useState("");
@@ -29,7 +30,7 @@ const Register = () => {
     e.preventDefault();
     try {
       console.log("UID before dispatch--->", uid);
-      await dispatch(registerUser({ user, pwd, uid })).unwrap();
+      await dispatch(registerUser({ user,email, pwd, uid })).unwrap();
       setUser("");
       setPwd("");
     } catch (error) {
@@ -54,14 +55,26 @@ const Register = () => {
           <div>
             <label htmlFor="username">Username</label>
             <input
-              type="email"
-              name="username"
+              type="text"
+              name="user"
               id="username"
               value={user}
               ref={userRef}
               autoComplete="off"
               required
               onChange={(e) => setUser(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              autoComplete="off"
+              required
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div>

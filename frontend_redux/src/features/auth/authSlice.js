@@ -8,11 +8,11 @@ const initialState = {
 
 export const registerUser = createAsyncThunk(
   "auth/registerUser",
-  async ({ user, pwd, uid }) => {
+  async ({ user, email, pwd, uid }) => {
     try {
       const resp = await axios.post(
         `/register`,
-        JSON.stringify({ username: user, password: pwd }),
+        JSON.stringify({ username: user, email: email, password: pwd }),
         {
           headers: { "Content-Type": "application/json" },
           params: { uid: uid },
@@ -101,15 +101,9 @@ export const authSlice = createSlice({
         state.auth = null;
       })
       .addCase(refreshAccessToken.fulfilled, (state, action) => {
-        console.log(
-          "state before updating new acccess token",
-          current(state)
-        );
+        console.log("state before updating new acccess token", current(state));
         state.auth = { ...state.auth, accessToken: action.payload };
-        console.log(
-          "state after updating new acccess token",
-          current(state)
-        );
+        console.log("state after updating new acccess token", current(state));
       })
       .addCase(refreshAccessToken.rejected, (state, action) => {
         console.log("Refresh user token failed");
