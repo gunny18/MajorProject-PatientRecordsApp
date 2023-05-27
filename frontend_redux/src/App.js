@@ -12,6 +12,10 @@ import PatientRegister from "./features/patient/PatientRegister";
 import PatientProfile from "./features/patient/PatientProfile";
 import UploadRecord from "./components/UploadRecord";
 import PatientRecords from "./features/patient/PatientRecords";
+import HospitalRegister from "./features/hospital/HospitalRegister";
+import HospitalWelcome from "./features/hospital/HospitalWelcome";
+import HospitalLogin from "./features/hospital/HospitalLogin";
+import HospitalOperations from "./features/hospital/HospitalOperations";
 
 function App() {
   return (
@@ -33,6 +37,12 @@ function App() {
             </Route>
           </Route>
           <Route path="users" element={<Users />} />
+        </Route>
+        <Route path="hospital">
+          <Route index element={<HospitalWelcome />} />
+          <Route path="register" element={<HospitalRegister />} />
+          <Route path="login" element={<HospitalLogin />} />
+          <Route path="options" element={<HospitalOperations />} />
         </Route>
         {/* catch all */}
         <Route path="*" element={<Missing />} />

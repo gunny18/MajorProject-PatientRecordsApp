@@ -30,7 +30,7 @@ const handleLogin = async (req, res) => {
       { refreshToken: refresh_token },
       { new: true }
     ).exec();
-    await Uid.findOneAndUpdate({ uid: currentUser.uid }, { active: true });
+    await Uid.findOneAndUpdate({ uid: currentUser.uid }, { active: true }).exec();
     res.cookie("jwt", refresh_token, {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
