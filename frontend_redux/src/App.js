@@ -32,7 +32,6 @@ function App() {
             <Route path="patient">
               <Route path="register" element={<PatientRegister />} />
               <Route path="profile" element={<PatientProfile />} />
-              <Route path=":id/upload" element={<UploadRecord />} />
               <Route path=":id/records" element={<PatientRecords />} />
             </Route>
           </Route>
@@ -42,6 +41,7 @@ function App() {
           <Route index element={<HospitalWelcome />} />
           <Route path="register" element={<HospitalRegister />} />
           <Route path="login" element={<HospitalLogin />} />
+          <Route path=":id/upload" element={<UploadRecord />} />
           <Route path="options" element={<HospitalOperations />} />
         </Route>
         {/* catch all */}

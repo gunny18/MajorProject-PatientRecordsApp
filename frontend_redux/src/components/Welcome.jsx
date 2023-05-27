@@ -17,6 +17,9 @@ const Welcome = () => {
         <li>
           <Link to={"/users"}>Users</Link>
         </li>
+        <li>
+          <Link to="/hospital">Hospital Portal</Link>
+        </li>
       </ul>
     </div>
   );

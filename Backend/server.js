@@ -46,6 +46,10 @@ app.use("/api/patients", require("./routes/patients/patient"));
 app.use("/api/hospital/register", require("./routes/hospital/register"));
 app.use("/api/hospital/login", require("./routes/hospital/login"));
 app.use("/api/hospital/logout", require("./routes/hospital/logout"));
+app.use(
+  "/api/hospital/activecards",
+  require("./routes/hospital/fetchActiveCards")
+);
 app.use(verifyJWT);
 app.use("/api/users", require("./routes/users/testUsers"));
 
