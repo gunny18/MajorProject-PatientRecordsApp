@@ -18,6 +18,7 @@ import HospitalLogin from "./features/hospital/HospitalLogin";
 import HospitalOperations from "./features/hospital/HospitalOperations";
 import HospitalPatientOptions from "./features/hospital/HospitalPatientOptions";
 import HospitalPatientLogs from "./features/hospital/HospitalPatientLogs";
+import RequireHospitalAuth from "./features/hospital/RequireHospitalAuth";
 
 function App() {
   return (
@@ -43,20 +44,22 @@ function App() {
           <Route index element={<HospitalWelcome />} />
           <Route path="register" element={<HospitalRegister />} />
           <Route path="login" element={<HospitalLogin />} />
-          <Route path=":id/upload" element={<UploadRecord />} />
-          <Route path="options" element={<HospitalOperations />} />
-          <Route
-            path="options/patients/:id"
-            element={<HospitalPatientOptions />}
-          />
-          <Route
-            path="options/patients/:id/logs"
-            element={<HospitalPatientLogs />}
-          />
-          <Route
-            path="options/patients/:id/upload"
-            element={<UploadRecord />}
-          />
+          <Route element={<RequireHospitalAuth />}>
+            <Route path=":id/upload" element={<UploadRecord />} />
+            <Route path="options" element={<HospitalOperations />} />
+            <Route
+              path="options/patients/:id"
+              element={<HospitalPatientOptions />}
+            />
+            <Route
+              path="options/patients/:id/logs"
+              element={<HospitalPatientLogs />}
+            />
+            <Route
+              path="options/patients/:id/upload"
+              element={<UploadRecord />}
+            />
+          </Route>
         </Route>
         {/* catch all */}
         <Route path="*" element={<Missing />} />

@@ -184,6 +184,7 @@ export const patientSlice = createSlice({
         state.currentPatient = action.payload.patient;
       })
       .addCase(fetchPatient.rejected, (state, action) => {
+        state.currentPatient = null
         throw new Error(action.error.message);
       })
       .addCase(uploadRecord.fulfilled, (state, action) => {
@@ -197,6 +198,7 @@ export const patientSlice = createSlice({
         state.records = action.payload.files;
       })
       .addCase(fetchRecords.rejected, (state, action) => {
+        state.records = null
         throw new Error(action.error.message);
       });
   },
