@@ -12,24 +12,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
 const PatientRecords = () => {
-  // const auth = useSelector(getAuthState);
   const currentPatient = useSelector(getPatient);
   const patientRecords = useSelector(getPatientRecords);
 
   const dispatch = useDispatch();
 
-  // const getPatientState = async () => {
-  //   try {
-  //     await dispatch(
-  //       fetchPatient({ patientId: auth?.currentUser?.patientId })
-  //     ).unwrap();
-  //   } catch (error) {
-  //     console.log(error?.message);
-  //   }
-  // };
-  // if (currentPatient === null) {
-  //   getPatientState();
-  // }
 
   useEffect(() => {
     const getRecords = async () => {

@@ -16,6 +16,8 @@ import HospitalRegister from "./features/hospital/HospitalRegister";
 import HospitalWelcome from "./features/hospital/HospitalWelcome";
 import HospitalLogin from "./features/hospital/HospitalLogin";
 import HospitalOperations from "./features/hospital/HospitalOperations";
+import HospitalPatientOptions from "./features/hospital/HospitalPatientOptions";
+import HospitalPatientLogs from "./features/hospital/HospitalPatientLogs";
 
 function App() {
   return (
@@ -43,6 +45,18 @@ function App() {
           <Route path="login" element={<HospitalLogin />} />
           <Route path=":id/upload" element={<UploadRecord />} />
           <Route path="options" element={<HospitalOperations />} />
+          <Route
+            path="options/patients/:id"
+            element={<HospitalPatientOptions />}
+          />
+          <Route
+            path="options/patients/:id/logs"
+            element={<HospitalPatientLogs />}
+          />
+          <Route
+            path="options/patients/:id/upload"
+            element={<UploadRecord />}
+          />
         </Route>
         {/* catch all */}
         <Route path="*" element={<Missing />} />

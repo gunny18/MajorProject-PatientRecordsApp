@@ -28,10 +28,6 @@ const Dashboard = () => {
     <div>
       <Link to="/dashboard/patient/profile">Go to Patient Profile</Link>
       <br />
-      <Link to={`/dashboard/patient/${currentPatient.patientId}/upload`}>
-        Upload Record
-      </Link>
-      <br />
       <Link to={`/dashboard/patient/${currentPatient.patientId}/records`}>
         View Records
       </Link>

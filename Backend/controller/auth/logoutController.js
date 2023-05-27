@@ -1,5 +1,4 @@
 const User = require("../../model/User");
-const Uid = require("../../model/Uid")
 const jwt = require("jsonwebtoken");
 
 const handleLogout = async (req, res) => {
@@ -29,7 +28,7 @@ const handleLogout = async (req, res) => {
     { new: true }
   ).exec();
   res.clearCookie("jwt", { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
-  await Uid.findOneAndUpdate({ uid: currentUser.uid }, { active: false }).exec();
+  // await Uid.findOneAndUpdate({ uid: currentUser.uid }, { active: false }).exec();
   return res.json({
     message: `${currentUser.username} Logged out successfully`,
   });

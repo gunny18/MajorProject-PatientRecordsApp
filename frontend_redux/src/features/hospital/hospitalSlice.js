@@ -59,14 +59,38 @@ export const loginHospital = createAsyncThunk(
 export const logoutHospital = createAsyncThunk(
   "auth/logoutHospital",
   async ({ hospitalId }) => {
-    const resp = await axios.post(
-      `/hospital/logout?hospitalId=${hospitalId}`,
-      null,
-      {
-        withCredentials: true,
-      }
-    );
-    return resp.data;
+    try {
+      const resp = await axios.post(
+        `/hospital/logout?hospitalId=${hospitalId}`,
+        null,
+        {
+          withCredentials: true,
+        }
+      );
+      return resp.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const fetchActivePatients = createAsyncThunk(
+  "auth/fetchActivePatients",
+  async ({ hospitalId }) => {
+    try {
+      console.log("received id as--->", hospitalId);
+      const resp = await axios.post(
+        `/hospital/activecards`,
+        JSON.stringify({ hospitalId }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      return resp.data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 );
 
@@ -95,6 +119,12 @@ export const hospitalAuthSlice = createSlice({
       .addCase(logoutHospital.fulfilled, (state, action) => {
         console.log("Logout case---->", action);
         state.auth = null;
+      })
+      .addCase(fetchActivePatients.fulfilled, (state, action) => {
+        state.auth = action.payload.hospital;
+      })
+      .addCase(fetchActivePatients.rejected, (state, action) => {
+        console.log(action);
       });
   },
 });

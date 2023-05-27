@@ -1,39 +1,17 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchPatient,
-  getPatient,
-  uploadRecord,
-} from "../features/patient/patientSlice";
+import { useDispatch } from "react-redux";
+import { uploadRecord } from "../features/patient/patientSlice";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getAuthState } from "../features/auth/authSlice";
+import { useNavigate, useParams } from "react-router-dom";
 
 const UploadRecord = () => {
-  const auth = useSelector(getAuthState);
-  const currentPatient = useSelector(getPatient);
+  const { id: patientId } = useParams();
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const [file, setFile] = useState();
-
-  const getPatientState = async () => {
-    try {
-      await dispatch(
-        fetchPatient({ patientId: auth?.currentUser?.patientId })
-      ).unwrap();
-    } catch (error) {
-      console.log(error?.message);
-    }
-  };
-
-  if (currentPatient === null) {
-    getPatientState();
-  }
-
-  console.log("Current Patient---->", currentPatient);
 
   const handleFileChange = (e) => {
     if (e.target.files) {
@@ -50,10 +28,8 @@ const UploadRecord = () => {
       const formData = new FormData();
       formData.append("file", file);
       formData.append("fileName", file.name);
-      await dispatch(
-        uploadRecord({ formData, patientId: currentPatient.patientId })
-      ).unwrap();
-      navigate("/dashboard/patient/profile");
+      await dispatch(uploadRecord({ formData, patientId })).unwrap();
+      navigate(`/hospital/options`);
     } catch (err) {
       console.log("Error in upload record component---->", err?.message);
     }
