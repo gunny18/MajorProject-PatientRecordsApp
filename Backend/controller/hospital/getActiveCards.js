@@ -13,7 +13,7 @@ const getActiveCards = async (req, res) => {
     const hospital = await Hospital.findOne({ hospitalId }).exec();
     if (!hospital) return res.status(401).json({ message: "No such hospital" });
     const activeUids = uids
-      .filter((uid) => (uid.active = true))
+      .filter((uid) => (uid.active == true))
       .map((uid) => uid.uid);
     console.log(activeUids);
     const users = await User.find({}).exec();
