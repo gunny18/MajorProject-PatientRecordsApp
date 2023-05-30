@@ -8,8 +8,10 @@ const storage = new GridFsStorage({
   file: (req, file) => {
     return new Promise((resolve, reject) => {
       if (req.params) {
+        // console.log("Query--->",req.query)
         metadata = {
           patientId: req.params.id,
+          description: req.query.desc,
         };
       }
       const fileInfo = {

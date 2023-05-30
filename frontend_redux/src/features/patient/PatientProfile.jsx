@@ -15,6 +15,7 @@ const PatientProfile = () => {
         <li>Patient ID: {currentPatient.patientId}</li>
         <li>BMI: {currentPatient.bmi}</li>
         <li>Blood Group: {currentPatient.bloodGroup}</li>
+        <li>Insurance Policy No: {currentPatient.insurance}</li>
       </ul>
     </div>
   ) : (

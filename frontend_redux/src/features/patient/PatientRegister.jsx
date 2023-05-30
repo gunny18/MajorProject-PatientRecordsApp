@@ -4,7 +4,6 @@ import { fetchPatient, registerPatient } from "./patientSlice";
 import { getAuthState } from "../auth/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const PatientRegister = () => {
   const auth = useSelector(getAuthState);
   const navigate = useNavigate();
@@ -13,6 +12,7 @@ const PatientRegister = () => {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [bloodGroup, setBloodGroup] = useState("");
+  const [insurance, setInsurance] = useState("");
   const dispatch = useDispatch();
   const handleRegisterPatient = async (e) => {
     try {
@@ -23,6 +23,7 @@ const PatientRegister = () => {
         height,
         bloodGroup,
         patientId: auth.currentUser.patientId,
+        insurance,
       };
       e.preventDefault();
       await dispatch(registerPatient(patientDetails)).unwrap();
@@ -31,6 +32,7 @@ const PatientRegister = () => {
       setWeight(0);
       setHeight(0);
       setBloodGroup("");
+      setInsurance("");
       console.log("Successfully registered patient detials");
       navigate("/dashboard/patient/profile");
     } catch (error) {
@@ -93,6 +95,13 @@ const PatientRegister = () => {
             value={height}
             onChange={(e) => setHeight(e.target.value)}
             min={0}
+          />
+          <label htmlFor="ins">Insurance(If Any)</label>
+          <input
+            type="text"
+            name="insurance"
+            value={insurance}
+            onChange={(e) => setInsurance(e.target.value)}
           />
           <label htmlFor="bg">Blood Group: </label>
           <select

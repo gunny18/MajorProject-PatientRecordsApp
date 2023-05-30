@@ -3,8 +3,15 @@ const User = require("../../model/User");
 const { connectDB } = require("../../config/dbConnect");
 
 const registerPatient = async (req, res) => {
-  const { patientId, firstName, lastName, weight, height, bloodGroup } =
-    req.body;
+  const {
+    patientId,
+    firstName,
+    lastName,
+    weight,
+    height,
+    bloodGroup,
+    insurance,
+  } = req.body;
   const canRegister = [
     patientId,
     firstName,
@@ -12,6 +19,7 @@ const registerPatient = async (req, res) => {
     weight,
     height,
     bloodGroup,
+    insurance,
   ].every(Boolean);
   if (!canRegister) {
     return res
@@ -36,6 +44,7 @@ const registerPatient = async (req, res) => {
     height,
     bmi,
     bloodGroup,
+    insurance,
   });
 
   const updatedUser = await User.findOneAndUpdate(
@@ -67,15 +76,18 @@ const getPatientDetails = async (req, res) => {
 
 const uploadPatientRecord = async (req, res) => {
   try {
-    const { id: patientId } = req.params;
+    const { id: patientId, description } = req.params;
+    
+    console.log("Body in controller--->", req.body);
     if (!patientId) {
-      return res.status(404).json({ message: "Non patient id received" });
+      return res.status(404).json({
+        message: "Missing mandatory data like patient Id or decription",
+      });
     }
+    return res.status(200).json({ message: "Uploaded file", file: req.file });
   } catch (error) {
     return res.status(404).json({ message: error.message });
   }
-  console.log(req.file);
-  return res.status(200).json({ message: "Uploaded file", file: req.file });
 };
 
 const queryPatientRecords = async (req, res) => {

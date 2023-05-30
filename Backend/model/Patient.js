@@ -29,6 +29,10 @@ const patientSchema = new Schema({
   bmi: {
     type: Number,
   },
+  insurance:{
+    type:String,
+    default:"000"
+  }
 });
 
 module.exports = mongoose.model("Patient", patientSchema);

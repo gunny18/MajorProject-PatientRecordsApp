@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
 import fileDownload from "js-file-download";
 
-
 const initialState = {
   currentPatient: null,
   records: null,
@@ -21,6 +20,7 @@ export const registerPatient = createAsyncThunk(
         height,
         bmi,
         bloodGroup,
+        insurance,
       } = initialState;
       const resp = await axios.post(
         "/patients",
@@ -32,6 +32,7 @@ export const registerPatient = createAsyncThunk(
           height,
           bmi,
           bloodGroup,
+          insurance,
         }),
         {
           headers: {
@@ -83,7 +84,7 @@ export const uploadRecord = createAsyncThunk(
     console.log("Received patient Id as--->", initialState);
     try {
       const resp = await axios.post(
-        `/patients/${initialState.patientId}/upload`,
+        `/patients/${initialState.patientId}/upload?desc=${initialState.description}`,
         initialState.formData,
         {
           headers: {
@@ -141,12 +142,10 @@ export const downloadRecord = createAsyncThunk(
       const response = await axios.get(
         `/patients/${initialState.patientId}/records/${initialState.filename}`,
         {
-          
-            responseType: "blob",
-          
+          responseType: "blob",
         }
       );
-      await fileDownload(response.data,`${initialState.filename}`)
+      await fileDownload(response.data, `${initialState.filename}`);
     } catch (error) {
       console.log("Error in axios thunk------>", error?.response);
       throw new Error(
@@ -184,7 +183,7 @@ export const patientSlice = createSlice({
         state.currentPatient = action.payload.patient;
       })
       .addCase(fetchPatient.rejected, (state, action) => {
-        state.currentPatient = null
+        state.currentPatient = null;
         throw new Error(action.error.message);
       })
       .addCase(uploadRecord.fulfilled, (state, action) => {
@@ -198,7 +197,7 @@ export const patientSlice = createSlice({
         state.records = action.payload.files;
       })
       .addCase(fetchRecords.rejected, (state, action) => {
-        state.records = null
+        state.records = null;
         throw new Error(action.error.message);
       });
   },

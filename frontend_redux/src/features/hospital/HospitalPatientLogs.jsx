@@ -56,6 +56,7 @@ const HospitalPatientLogs = () => {
         <li>Patient ID: {currentPatient.patientId}</li>
         <li>BMI: {currentPatient.bmi}</li>
         <li>Blood Group: {currentPatient.bloodGroup}</li>
+        <li>Insurance Policy No: {currentPatient.insurance}</li>
       </ul>
     </div>
   ) : (
@@ -68,10 +69,14 @@ const HospitalPatientLogs = () => {
         <ul>
           {patientRecords?.map((record) => (
             <div key={record._id}>
-              <li key={record._id}>{record.filename}</li>
+              <li key={record._id}>
+                <p>{record.filename}</p>
+                <p>{record.metadata.description}</p>
+              </li>
               <button onClick={(e) => handleDownload(e, record.filename)}>
                 {<FontAwesomeIcon icon={faFileDownload} />}
               </button>
+              <hr />
             </div>
           ))}
         </ul>
