@@ -11,7 +11,7 @@ const Register = () => {
   const userRef = useRef();
 
   const [user, setUser] = useState("");
-  const [email,setEmail] = useState("")
+  const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
 
   const [errMsg, setErrMsg] = useState("");
@@ -30,7 +30,7 @@ const Register = () => {
     e.preventDefault();
     try {
       console.log("UID before dispatch--->", uid);
-      await dispatch(registerUser({ user,email, pwd, uid })).unwrap();
+      await dispatch(registerUser({ user, email, pwd, uid })).unwrap();
       setUser("");
       setPwd("");
     } catch (error) {
@@ -46,14 +46,16 @@ const Register = () => {
         <Link to="/login">Login</Link>
       </section>
     ) : (
-      <section>
-        <div className={errMsg ? "err" : "hide"}>
+      <section className="register__form__container">
+        {/* <div className={errMsg ? "err" : "hide"}>
           <h1>{errMsg}</h1>
-        </div>
-        <h1>Register</h1>
+        </div> */}
         <form className="register__form" onSubmit={handleSubmit}>
+          <img src="logo.png" className="logo" />
+          <h1>Create an account</h1>
+
           <div>
-            <label htmlFor="username">Username</label>
+            {/* <label htmlFor="username">Username</label> */}
             <input
               type="text"
               name="user"
@@ -61,15 +63,17 @@ const Register = () => {
               value={user}
               ref={userRef}
               autoComplete="off"
+              placeholder="Username"
               required
               onChange={(e) => setUser(e.target.value)}
             />
           </div>
           <div>
-            <label htmlFor="email">Email</label>
+            {/* <label htmlFor="email">Email</label> */}
             <input
               type="email"
               name="email"
+              placeholder="Email"
               id="email"
               value={email}
               autoComplete="off"
@@ -78,9 +82,10 @@ const Register = () => {
             />
           </div>
           <div>
-            <label htmlFor="pwd">Password</label>
+            {/* <label htmlFor="pwd">Password</label> */}
             <input
               type="password"
+              placeholder="Password"
               name="pwd"
               id="pwd"
               value={pwd}
@@ -95,7 +100,16 @@ const Register = () => {
       </section>
     );
 
-  return <>{content}</>;
+  return (
+    <div className="register">
+      {content}
+      <img className="register_rect" src="background_register_rect.png" />
+      <section className="register_heading">
+        <h1>Register</h1>
+        <h1> &nbsp; &nbsp; &nbsp; Here!</h1>
+      </section>
+    </div>
+  );
 };
 
 export default Register;

@@ -1,7 +1,30 @@
-.layout__container {
-  padding: 10%;
+.layout{
+  height: 100vh;
+}
+
+.layout_container{
+  height: 100vh;
+}
+
+
+.layout_nav{
+  background-color: rgb(216,211,195);
+  padding: 25px;
+}
+
+.nav_links{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+}
+
+.nav_links_item{
+  text-decoration: none;
+  color: black;
+  margin-left: 30px;
+  font-weight: bolder;
+}
+
+.nav_links_item:hover{
+  color: rgb(168, 157, 120);
 }

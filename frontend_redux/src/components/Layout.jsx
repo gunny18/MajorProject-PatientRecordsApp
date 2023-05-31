@@ -14,12 +14,10 @@ import {
 const Layout = () => {
   const location = useLocation();
   const { pathname } = location;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const auth = useSelector(getAuthState);
   const hospitalAuth = useSelector(getHospitalAuthState);
-
-  const homeLink = pathname !== "/" ? <Link to={"/"}>Home</Link> : null;
 
   const dispatch = useDispatch();
 
@@ -37,7 +35,7 @@ const Layout = () => {
       await dispatch(
         logoutHospital({ hospitalId: hospitalAuth.hospitalId })
       ).unwrap();
-      navigate("/hospital")
+      navigate("/hospital");
     } catch (err) {
       console.log("An error occured when logging out hospital user---->", err);
     }
@@ -56,11 +54,31 @@ const Layout = () => {
   ) : null;
 
   return (
-    <div className="layout__container">
-      {logoutButton}
-      {logoutButtonHosp}
-      <Outlet />
-      {homeLink}
+    <div className="layout">
+      <nav className="layout_nav">
+        <section className="nav_links">
+          <Link className="nav_links_item" to="/">
+            Home
+          </Link>
+          <Link className="nav_links_item" to="/about">
+            About
+          </Link>
+          <Link className="nav_links_item" to="/register">
+            Register
+          </Link>
+          <Link className="nav_links_item" to="/dashboard">
+            Dashboard
+          </Link>
+          <Link className="nav_links_item" to="/login">
+            Login
+          </Link>
+        </section>
+      </nav>
+      <div className="layout_container">
+        {logoutButton}
+        {logoutButtonHosp}
+        <Outlet />
+      </div>
     </div>
   );
 };
