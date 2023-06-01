@@ -1,68 +1,27 @@
-.register{
+
+.login{
     background-image: url("../../../public/back.png");
     height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: 50px 0px;
-    min-height:100%
+    min-height: 100%;
 }
 
-.logo{
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-}
 
-.register_rect{
+.login_rect{
     /* margin-top: 10px; */
     position: absolute;
     top: 40px;
     width: 500px;
-    height: 600px;
+    height: 500px;
     position: relative;
     right: 230px;
     object-fit: contain;
 }
 
-.register__form__container{
-    min-width: 300px;
-    min-height: 350px;
-    padding: 20px;
-    position: absolute;
-    right: 550px;
-    top: 23%;
-    background-color: rgb(216,211,195);
-    border-radius: 20px;
-}
-
-.register__form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-
-
-.register__form > div > input{
-    width: 260px;
-    height: 43px;
-    padding: 10px;
-    border-radius: 4px;
-    border: transparent;
-}
-
-.register__button{
-    min-width: 90%;
-    padding: 8px;
-    border-radius: 8px;
-    border: transparent;
-    color: white;
-    background-color: rgb(168, 157, 120);
-}
-
-.register_heading{
+.login_heading{
     position: absolute;
     bottom: 260px;
     left: 80px;
@@ -71,13 +30,43 @@
     padding: 5px;
 }
 
-.hide {
-  display: none;
+.login__form__container{
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+    position: absolute;
+    right: 800px;
+    top: 23%;
+    background-color: rgb(216,211,195);
+    border-radius: 20px;
 }
 
-.err {
-  margin: 15px;
-  background-color: rgb(201, 98, 98);
-  color: black;
-  border: 1px solid red;
+.login__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.login__form > div > input{
+    width: 260px;
+    padding: 10px;
+    border-radius: 4px;
+    border: transparent;
+}
+
+.login__button{
+    width: 260px;
+    padding: 8px;
+    border-radius: 8px;
+    border: transparent;
+    color: white;
+    background-color: rgb(168, 157, 120);
+}
+
+.login_key{
+    position: absolute;
+    width: 700px;
+    left: 730px;
+    bottom: -340px;
 }

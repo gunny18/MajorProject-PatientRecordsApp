@@ -3,6 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getHospitalStatus, registerHospital } from "./hospitalSlice";
+import "./HospitalRegister.css";
+import hospRectImg from "./images/hosp_port_head.png"
+import hospPortImg from "./images/hosp_port_img.png"
+import logo from "./images/logo.png"
 
 const HospitalRegister = () => {
   const userRef = useRef();
@@ -50,18 +54,19 @@ const HospitalRegister = () => {
         <Link to="/hospital/login">Login</Link>
       </section>
     ) : (
-      <section>
+      <section className="hosp_register_form_container">
         <div className={errMsg ? "err" : "hide"}>
           <h1>{errMsg}</h1>
         </div>
-        <h1>Register</h1>
-        <form className="register__form" onSubmit={handleSubmit}>
+        <form className="hosp_register_form" onSubmit={handleSubmit}>
+          <img src={logo} className="logo" alt="logo" />
+          <h1>Create an account</h1>
           <div>
-            <label htmlFor="name">Hospital Name</label>
             <input
               type="text"
               name="name"
               id="name"
+              placeholder="Hospital Name"
               value={name}
               required
               ref={userRef}
@@ -70,10 +75,10 @@ const HospitalRegister = () => {
             />
           </div>
           <div>
-            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
+              placeholder="Email"
               id="email"
               value={email}
               autoComplete="off"
@@ -82,24 +87,34 @@ const HospitalRegister = () => {
             />
           </div>
           <div>
-            <label htmlFor="pwd">Password</label>
             <input
               type="password"
               name="pwd"
+              placeholder="Password"
               id="pwd"
               value={pwd}
               required
               onChange={(e) => setPwd(e.target.value)}
             />
           </div>
-          <button disabled={!canRegister} className="register__button">
+          <button disabled={!canRegister} className="hosp_register__button">
             Sign Up
           </button>
         </form>
       </section>
     );
 
-  return <>{content}</>;
+  return (
+    <div className="hospRegister">
+      {content}
+      <img className="hospImg" src={hospRectImg} alt="hosp_port_head" />
+      <section className="hosp_register_heading">
+        <h1>Hospital</h1>
+        <h1>Registration!</h1>
+      </section>
+      <img src={hospPortImg} alt="hosp back" className="hospPortImg"/>
+    </div>
+  );
 };
 
 export default HospitalRegister;

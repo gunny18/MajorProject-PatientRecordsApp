@@ -40,29 +40,29 @@ function App() {
           </Route>
           <Route path="users" element={<Users />} />
         </Route>
-        <Route path="hospital">
-          <Route index element={<HospitalWelcome />} />
-          <Route path="register" element={<HospitalRegister />} />
-          <Route path="login" element={<HospitalLogin />} />
-          <Route element={<RequireHospitalAuth />}>
-            <Route path=":id/upload" element={<UploadRecord />} />
-            <Route path="options" element={<HospitalOperations />} />
-            <Route
-              path="options/patients/:id"
-              element={<HospitalPatientOptions />}
-            />
-            <Route
-              path="options/patients/:id/logs"
-              element={<HospitalPatientLogs />}
-            />
-            <Route
-              path="options/patients/:id/upload"
-              element={<UploadRecord />}
-            />
-          </Route>
-        </Route>
         {/* catch all */}
         <Route path="*" element={<Missing />} />
+      </Route>
+      <Route path="hospital">
+        <Route index element={<HospitalWelcome />} />
+        <Route path="register" element={<HospitalRegister />} />
+        <Route path="login" element={<HospitalLogin />} />
+        <Route element={<RequireHospitalAuth />}>
+          <Route path=":id/upload" element={<UploadRecord />} />
+          <Route path="options" element={<HospitalOperations />} />
+          <Route
+            path="options/patients/:id"
+            element={<HospitalPatientOptions />}
+          />
+          <Route
+            path="options/patients/:id/logs"
+            element={<HospitalPatientLogs />}
+          />
+          <Route
+            path="options/patients/:id/upload"
+            element={<UploadRecord />}
+          />
+        </Route>
       </Route>
     </Routes>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, Link,  useNavigate } from "react-router-dom";
 import "./Layout.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOut } from "@fortawesome/free-solid-svg-icons";
@@ -12,8 +12,7 @@ import {
 } from "../features/hospital/hospitalSlice";
 
 const Layout = () => {
-  const location = useLocation();
-  const { pathname } = location;
+ 
   const navigate = useNavigate();
 
   const auth = useSelector(getAuthState);
@@ -65,6 +64,9 @@ const Layout = () => {
           </Link>
           <Link className="nav_links_item" to="/register">
             Register
+          </Link>
+          <Link className="nav_links_item" to="/hospital">
+            Hospital Portal
           </Link>
           <Link className="nav_links_item" to="/dashboard">
             Dashboard

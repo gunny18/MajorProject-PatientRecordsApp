@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { getAuthRegisterStatus, registerUser } from "./authSlice";
 import { useDispatch, useSelector } from "react-redux";
 
+
 const Register = () => {
   const [searchParams] = useSearchParams();
   const uid = searchParams.get("uid");
@@ -47,11 +48,11 @@ const Register = () => {
       </section>
     ) : (
       <section className="register__form__container">
-        {/* <div className={errMsg ? "err" : "hide"}>
+        <div className={errMsg ? "err" : "hide"}>
           <h1>{errMsg}</h1>
-        </div> */}
+        </div>
         <form className="register__form" onSubmit={handleSubmit}>
-          <img src="logo.png" className="logo" />
+          <img src="logo.png" className="logo" alt="logo"/>
           <h1>Create an account</h1>
 
           <div>
@@ -103,7 +104,7 @@ const Register = () => {
   return (
     <div className="register">
       {content}
-      <img className="register_rect" src="background_register_rect.png" />
+      <img className="register_rect" src="background_register_rect.png" alt="background rect"/>
       <section className="register_heading">
         <h1>Register</h1>
         <h1> &nbsp; &nbsp; &nbsp; Here!</h1>

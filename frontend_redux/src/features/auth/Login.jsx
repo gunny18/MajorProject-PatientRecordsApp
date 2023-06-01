@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./Register.css";
+import "./Login.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUser } from "./authSlice";
@@ -40,16 +40,19 @@ const Login = () => {
   };
 
   const content = (
-    <section>
+    <section className="login__form__container">
       <h1 className={errMsg ? "err" : "hide"}>{errMsg}</h1>
-      <h1>Sign In</h1>
-      <form className="register__form" onSubmit={handleSubmit}>
+      
+      <form className="login__form" onSubmit={handleSubmit}>
+        <img src="logo.png" className="logo" />
+        <h1>Enter Your Credentials</h1>
         <div>
-          <label htmlFor="username">Username</label>
+          {/* <label htmlFor="username">Username</label> */}
           <input
             type="email"
             name="username"
             id="username"
+            placeholder="Email"
             value={user}
             ref={userRef}
             autoComplete="off"
@@ -58,24 +61,36 @@ const Login = () => {
           />
         </div>
         <div>
-          <label htmlFor="pwd">Password</label>
+          {/* <label htmlFor="pwd">Password</label> */}
           <input
             type="password"
             name="pwd"
             id="pwd"
+            placeholder="Password"
             value={pwd}
             required
             onChange={(e) => setPwd(e.target.value)}
           />
         </div>
-        <button disabled={!canRegister} className="register__button">
+        <button disabled={!canRegister} className="login__button">
           Sign In
         </button>
       </form>
     </section>
   );
 
-  return <>{content}</>;
+  return (
+    <div className="login">
+      
+      {content}
+      <img className="login_rect" src="login_head_rect.png" />
+      <section className="login_heading">
+        <h1>Login</h1>
+        <h1> &nbsp; &nbsp; &nbsp; Here!</h1>
+        <img className="login_key" src="login_key.png" />
+      </section>
+    </div>
+  );
 };
 
 export default Login;
