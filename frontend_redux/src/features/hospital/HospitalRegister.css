@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
+
+
 .hospRegister {
-  min-height: 100%;
+  
+  background-color: rgb(216, 211, 195);
+  background-repeat: repeat;
+  background-size: cover;
+  height: 800px;
 }
 
 .hospImg {
@@ -18,13 +25,16 @@
 }
 
 .hosp_register_form_container {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(97, 51, 81);
   min-width: 300px;
   min-height: 350px;
+  height: 485px;
   padding: 20px;
   position: absolute;
-  right: 630px;
-  top: 30%;
-  background-color: rgb(216, 211, 195);
+  right: 740px;
+  top: 15%;
+  background-color: rgb(242, 242, 242);
   border-radius: 20px;
 }
 
@@ -36,6 +46,8 @@
 }
 
 .hosp_register_form > div > input {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 17px;
   width: 260px;
   height: 43px;
   padding: 10px;
@@ -44,7 +56,10 @@
 }
 
 .hosp_register__button {
-  min-width: 90%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  min-width: 100%;
   padding: 8px;
   border-radius: 8px;
   border: transparent;
@@ -53,8 +68,9 @@
 }
 
 .hosp_register_heading {
+  font-family: 'Merriweather', serif;
   position: absolute;
-  bottom: 375px;
+  bottom: 385px;
   left: 100px;
   font-size: xx-large;
 }
@@ -73,8 +89,8 @@
 .hospPortImg {
   position: absolute;
   right: 0;
-  top: -60px;
-  width: 500px;
+  top: -20px;
+  width: 600px;
   height: 500px;
   object-fit: contain;
 }

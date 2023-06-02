@@ -100,6 +100,7 @@ const HospitalRegister = () => {
           <button disabled={!canRegister} className="hosp_register__button">
             Sign Up
           </button>
+          <Link to="/hospital/login">Already have an account? Login</Link>
         </form>
       </section>
     );

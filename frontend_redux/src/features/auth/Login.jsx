@@ -3,6 +3,9 @@ import "./Login.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUser } from "./authSlice";
+import logo from "./images/logo.png"
+import loginRect from "./images/login_head_rect.png";
+import loginKey from "./images/login_key.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -44,7 +47,7 @@ const Login = () => {
       <h1 className={errMsg ? "err" : "hide"}>{errMsg}</h1>
       
       <form className="login__form" onSubmit={handleSubmit}>
-        <img src="logo.png" className="logo" />
+        <img src={logo} className="logo" alt="logo"/>
         <h1>Enter Your Credentials</h1>
         <div>
           {/* <label htmlFor="username">Username</label> */}
@@ -83,11 +86,11 @@ const Login = () => {
     <div className="login">
       
       {content}
-      <img className="login_rect" src="login_head_rect.png" />
+      <img className="login_rect" src={loginRect} alt="login rect" />
       <section className="login_heading">
         <h1>Login</h1>
         <h1> &nbsp; &nbsp; &nbsp; Here!</h1>
-        <img className="login_key" src="login_key.png" />
+        <img className="login_key" src={loginKey} alt="login key" />
       </section>
     </div>
   );

@@ -2,6 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginHospital } from "./hospitalSlice";
+import "./HospitalLogin.css";
+import hospRectImg from "./images/hosp_port_head.png"
+import hospPortImg from "./images/hosp_port_img.png"
+import logo from "./images/logo.png"
 
 const HospitalLogin = () => {
   const navigate = useNavigate();
@@ -36,16 +40,20 @@ const HospitalLogin = () => {
   };
 
   const content = (
-    <section>
-      <h1 className={errMsg ? "err" : "hide"}>{errMsg}</h1>
-      <h1>Sign In</h1>
-      <form className="register__form" onSubmit={handleSubmit}>
+    <section className="hosp_login_form_container">
+      <div className={errMsg ? "err" : "hide"}>{errMsg}
+        <h1>Sign In</h1>
+      </div>
+      <form className="hosp_login_form" onSubmit={handleSubmit}>
+        <img src={logo} className="logo" alt="logo" />
+        <h1>Enter Credentials</h1>
         <div>
-          <label htmlFor="username">Username</label>
+          {/* <label htmlFor="username">Username</label> */}
           <input
             type="email"
             name="username"
             id="username"
+            placeholder="Username"
             value={user}
             ref={userRef}
             autoComplete="off"
@@ -54,24 +62,36 @@ const HospitalLogin = () => {
           />
         </div>
         <div>
-          <label htmlFor="pwd">Password</label>
+          {/* <label htmlFor="pwd">Password</label> */}
           <input
             type="password"
             name="pwd"
             id="pwd"
+            placeholder="Password"
             value={pwd}
             required
             onChange={(e) => setPwd(e.target.value)}
           />
         </div>
-        <button disabled={!canRegister} className="register__button">
+        <button disabled={!canRegister} className="hosp_login_button">
           Sign In
         </button>
+        <label>Forgot Password?</label>
       </form>
     </section>
   );
 
-  return <>{content}</>;
+  return (
+   <div className="hosplogin">
+     {content}
+     <img className="hospImg" src={hospRectImg} alt="hosp_port_head" />
+     <section className="hosp_login_heading">
+       <h1>Hospital</h1>
+       <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login</h1>
+     </section>
+     <img src={hospPortImg} alt="hosp back" className="hospPortImg"/>
+   </div>
+  );
 };
 
 export default HospitalLogin;

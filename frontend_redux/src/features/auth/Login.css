@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
 
 .login{
     background-image: url("../../../public/back.png");
@@ -22,6 +23,7 @@
 }
 
 .login_heading{
+    font-family: 'Merriweather', serif;
     position: absolute;
     bottom: 260px;
     left: 80px;
@@ -31,6 +33,7 @@
 }
 
 .login__form__container{
+    font-family: 'Source Sans Pro', sans-serif;
     width: 300px;
     height: 400px;
     padding: 20px;
@@ -49,6 +52,8 @@
 }
 
 .login__form > div > input{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;
     width: 260px;
     padding: 10px;
     border-radius: 4px;
@@ -56,6 +61,9 @@
 }
 
 .login__button{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
     width: 260px;
     padding: 8px;
     border-radius: 8px;
