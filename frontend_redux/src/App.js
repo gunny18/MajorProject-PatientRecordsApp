@@ -19,13 +19,15 @@ import HospitalOperations from "./features/hospital/HospitalOperations";
 import HospitalPatientOptions from "./features/hospital/HospitalPatientOptions";
 import HospitalPatientLogs from "./features/hospital/HospitalPatientLogs";
 import RequireHospitalAuth from "./features/hospital/RequireHospitalAuth";
+import About from "./components/About";
 
 function App() {
   return (
     <Routes>
+      <Route index element={<Welcome />} />
       <Route path="/" element={<Layout />}>
         {/* Public */}
-        <Route index element={<Welcome />} />
+        <Route path="about" element={<About />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         {/* protected */}

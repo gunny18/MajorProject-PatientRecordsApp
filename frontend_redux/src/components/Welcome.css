@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+
+.welcome {
+  min-height: 100vh;
+  background-color: black;
+  background-image: url("../components/images/home_rfid.png");
+  background-size: cover;
+}
+
+.wlayout_nav {
+  /* background-color: rgb(216,211,195); */
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.wnav_links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.wnav_links_item {
+  text-decoration: none;
+  color: white;
+  margin-left: 30px;
+  font-weight: bolder;
+}
+
+.dc {
+  color: black;
+}
+
+.wnav_links_item:hover {
+  color: rgb(168, 157, 120);
+}
+
+.homeRect {
+  width: 66%;
+  height: 109%;
+  position: fixed;
+  right: -357px;
+  top: -93px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.homeLogo {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  position: absolute;
+  top: -70px;
+  left: 20px;
+}
+
+.homeDescRect {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  position: fixed;
+  right: -89px;
+  top: 108px;
+  overflow: hidden;
+}
+
+.homeDescText {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: larger;
+  position: absolute;
+  right: 9px;
+  max-width: 300px;
+  top: 172px;
+  background-color: rgb(216, 211, 195);
+}
