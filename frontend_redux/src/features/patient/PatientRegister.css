@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+
+.Patient_Registration {
+  background-image: url(../patient/images/pat_reg.jpg);
+  background-size: cover;
+  right: -200px;
+  padding-bottom: 80px;
+}
+
+.form_div {
+  display: flex;
+  flex-direction: row;
+  right: 0;
+  backdrop-filter: blur(5px);
+  width: 400px;
+  margin-left: 1000px;
+  margin-top: 40px;
+  /* margin-bottom: 40px; */
+  padding-bottom: 40px;
+  backdrop-filter: blur(20px);
+}
+
+.pat_reg_form {
+  font-family: "Merriweather", serif;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 30px;
+  right: 0;
+  /* backdrop-filter: blur(200px); */
+  gap: 10px;
+}
+
+.pat_reg_form > input {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 17px;
+  width: 320px;
+  height: 33px;
+  border-radius: 5px;
+  border: transparent;
+  background-color: rgb(233, 232, 232);
+  padding: 10px;
+}
+
+.pat_reg_form > select {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 17px;
+  width: 320px;
+  height: 33px;
+  border-radius: 5px;
+  border: transparent;
+  background-color: rgb(233, 232, 232);
+  padding: 5px;
+}
+
+.pat_reg_btn {
+  text-decoration: none;
+  background-image: linear-gradient(
+    to right,
+    #695022 0%,
+    #d6c287 51%,
+    #6c5307 100%
+  );
+  font-family: "Merriweather", serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: block;
+  border: none;
+  outline: hidden;
+  cursor: pointer;
+  width: 300px;
+  height: 50px;
+}
+
+.pat_reg_btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+}
+
+.already_registered_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imag_error {
+  position: relative;
+  top: -120px;
+  height: 600px;
+}
+
+.err_msg {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 60px;
+  font-weight: 1800;
+  position: relative;
+  top: -220px;
+}
+
+.err_btn {
+  position: relative;
+  top: -200px;
+  background-image: linear-gradient(
+    to right,
+    #614385 0%,
+    #516395 51%,
+    #614385 100%
+  );
+  font-family: "Merriweather", serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+  padding: 20px 58px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: block;
+  border: none;
+  outline: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.err_btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.link_txt {
+  text-decoration: none;
+}
+
+.err_btn button {
+  background: transparent;
+  border: transparent;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}

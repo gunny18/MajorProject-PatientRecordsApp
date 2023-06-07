@@ -55,6 +55,10 @@ const Layout = () => {
   return (
     <div className="layout">
       <nav className="layout_nav">
+        <section>
+          {logoutButton}
+          {logoutButtonHosp}
+        </section>
         <section className="nav_links">
           <Link className="nav_links_item" to="/">
             Home
@@ -77,8 +81,6 @@ const Layout = () => {
         </section>
       </nav>
       <div className="layout_container">
-        {logoutButton}
-        {logoutButtonHosp}
         <Outlet />
       </div>
     </div>

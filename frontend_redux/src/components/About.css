@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+
+.fnt {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: x-large;
+}
+
+.ban1 {
+  width: 1518px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ban2 {
+  background-color: rgb(255, 255, 255);
+  height: 1000px;
+}
+
+.ban3 {
+  width: 1518px;
+}
+
+.Intra {
+  left: 40px;
+  height: 500px;
+  position: relative;
+  top: 170px;
+}
+
+.Inter {
+  height: 550px;
+  position: relative;
+  top: -390px;
+  left: 800px;
+}
+
+.dot_inter {
+  position: relative;
+  top: -750px;
+  left: 220px;
+  transform: rotate(90deg);
+}
+.dot_intra {
+  position: relative;
+  top: -320px;
+  left: -220px;
+}
+.ab_pic {
+  height: 500px;
+  position: absolute;
+  left: 100px;
+  top: 140px;
+}
+
+.abstract {
+  position: absolute;
+  right: 20%;
+  top: 40%;
+  max-width: 500px;
+}
+
+.abstract h1 {
+  font-size: xx-large;
+  margin: 10px 0;
+  transition: color 0.5s;
+}
+
+.abstract p {
+  margin: 5px 0;
+  font-size: x-large;
+}
+
+.zoom {
+  transition: transform 0.2s;
+}
+
+.zoom:hover {
+  transform: scale(1.5) translateX(20px);
+}
+
+.intra {
+  position: absolute;
+  right: 10%;
+  top: 267%;
+  max-width: 500px;
+}
+
+.intra p {
+  font-size: x-large;
+}
+
+.zoom2 {
+  transition: transform 0.2s;
+}
+
+.zoom2:hover {
+  transform: scale(1.3);
+}
+
+.inter {
+  position: absolute;
+  left: 10%;
+  max-width: 500px;
+  top: 410%;
+  font-size: x-large;
+}
