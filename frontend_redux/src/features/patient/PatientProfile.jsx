@@ -10,6 +10,8 @@ const PatientProfile = () => {
       <ul>
         <li>First Name: {currentPatient.firstName}</li>
         <li>Last Name: {currentPatient.lastName}</li>
+        <li>DOB: {currentPatient.dob}</li>
+        <li>Age: {currentPatient.age}</li>
         <li>Height: {currentPatient.height}</li>
         <li>Weight: {currentPatient.weight}</li>
         <li>Patient ID: {currentPatient.patientId}</li>

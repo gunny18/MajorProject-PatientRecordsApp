@@ -6,6 +6,18 @@ const patientSchema = new Schema({
     type: String,
     required: true,
   },
+  records: {
+    type: [
+      {
+        filename: {
+          type: String,
+        },
+        description: {
+          type: String,
+        },
+      },
+    ],
+  },
   hospitalId: {
     type: String,
     default: "000",
@@ -29,10 +41,16 @@ const patientSchema = new Schema({
   bmi: {
     type: Number,
   },
-  insurance:{
-    type:String,
-    default:"000"
-  }
+  insurance: {
+    type: String,
+    default: "000",
+  },
+  dob: {
+    type: String,
+  },
+  age: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Patient", patientSchema);

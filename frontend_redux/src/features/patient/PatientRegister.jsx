@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPatient, registerPatient } from "./patientSlice";
 import { getAuthState } from "../auth/authSlice";
 import { Link, useNavigate } from "react-router-dom";
-import error_img from "./images/already_registered.png"
-import './PatientRegister.css'
+import error_img from "./images/already_registered.png";
+import "./PatientRegister.css";
 // import pat_reg_img from './images/pat_reg.jpg'
 
 const PatientRegister = () => {
@@ -16,6 +16,8 @@ const PatientRegister = () => {
   const [height, setHeight] = useState(0);
   const [bloodGroup, setBloodGroup] = useState("");
   const [insurance, setInsurance] = useState("");
+  const [dob, setDob] = useState("");
+  console.log("DOB----->",dob,typeof(dob))
   const dispatch = useDispatch();
   const handleRegisterPatient = async (e) => {
     try {
@@ -27,6 +29,7 @@ const PatientRegister = () => {
         bloodGroup,
         patientId: auth.currentUser.patientId,
         insurance,
+        dob
       };
       e.preventDefault();
       await dispatch(registerPatient(patientDetails)).unwrap();
@@ -36,6 +39,7 @@ const PatientRegister = () => {
       setHeight(0);
       setBloodGroup("");
       setInsurance("");
+      setDob("")
       console.log("Successfully registered patient detials");
       navigate("/dashboard/patient/profile");
     } catch (error) {
@@ -82,6 +86,14 @@ const PatientRegister = () => {
               id="lastname"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+            />
+            <label htmlFor="dob">DOB</label>
+            <input
+              type="date"
+              name="dob"
+              id="dob"
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
             />
             <label htmlFor="weight">Weight(kg): </label>
             <input

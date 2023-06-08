@@ -30,8 +30,9 @@ const UploadRecord = () => {
       const formData = new FormData();
       formData.append("file", file);
       formData.append("fileName", file.name);
+      formData.append("description", description);
       await dispatch(
-        uploadRecord({ formData, patientId,description })
+        uploadRecord({ formData, patientId })
       ).unwrap();
       navigate(`/hospital/options`);
     } catch (err) {

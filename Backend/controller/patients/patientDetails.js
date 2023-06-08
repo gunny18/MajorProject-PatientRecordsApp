@@ -11,6 +11,7 @@ const registerPatient = async (req, res) => {
     height,
     bloodGroup,
     insurance,
+    dob,
   } = req.body;
   const canRegister = [
     patientId,
@@ -20,6 +21,7 @@ const registerPatient = async (req, res) => {
     height,
     bloodGroup,
     insurance,
+    dob,
   ].every(Boolean);
   if (!canRegister) {
     return res
@@ -33,6 +35,11 @@ const registerPatient = async (req, res) => {
         "The patient is already registered, cannot register same patient again",
     });
   }
+  const d = new Date(dob);
+  const month_diff = Date.now() - d.getTime();
+  const age_dt = new Date(month_diff);
+  const year = age_dt.getUTCFullYear();
+  const age = Math.abs(year - 1970);
   const bmi = Math.round(
     (Number(weight) / (Number(height) * Number(height))) * 10000
   );
@@ -45,6 +52,8 @@ const registerPatient = async (req, res) => {
     bmi,
     bloodGroup,
     insurance,
+    dob,
+    age,
   });
 
   const updatedUser = await User.findOneAndUpdate(
@@ -76,14 +85,27 @@ const getPatientDetails = async (req, res) => {
 
 const uploadPatientRecord = async (req, res) => {
   try {
-    const { id: patientId, description } = req.params;
-    
-    console.log("Body in controller--->", req.body);
-    if (!patientId) {
+    const { id: patientId } = req.params;
+    const { description, fileName } = req.body;
+
+    console.log("filename in controller--->", req.body.fileName);
+    console.log("description in controller--->", req.body.description);
+    if (!patientId || !description || !fileName) {
       return res.status(404).json({
         message: "Missing mandatory data like patient Id or decription",
       });
     }
+    const patient = await Patient.findOne({ patientId }).exec();
+    if (!patient) {
+      return res.status(404).json({
+        message: "No patient with such id",
+      });
+    }
+    patient.records.push({
+      filename: fileName,
+      description: description,
+    });
+    await patient.save();
     return res.status(200).json({ message: "Uploaded file", file: req.file });
   } catch (error) {
     return res.status(404).json({ message: error.message });
@@ -100,6 +122,11 @@ const queryPatientRecords = async (req, res) => {
     if (!patientId) {
       return res.status(404).json({ message: "Received no id" });
     }
+    const patient = await Patient.findOne({ patientId }).exec();
+    if (!patient) {
+      return res.status(404).json({ message: "Received such patient" });
+    }
+    const patientRecords = patient.records;
     const { gridBucket } = await connectDB();
     const files = await gridBucket
       .find({ "metadata.patientId": patientId })
@@ -107,6 +134,13 @@ const queryPatientRecords = async (req, res) => {
     // console.log(files);
     if (!files || files.length == 0) {
       return res.status(404).json({ message: "No records exist" });
+    }
+    for (i = 0; i < files.length; i++) {
+      desc = patientRecords.find((pr) => pr.filename === files[i].filename);
+      files[i] = {
+        ...files[i],
+        description: desc.description,
+      };
     }
     return res.status(200).json({ message: "Queried files", files });
   } catch (err) {

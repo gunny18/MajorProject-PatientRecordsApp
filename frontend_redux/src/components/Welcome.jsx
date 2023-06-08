@@ -3,8 +3,34 @@ import "./Welcome.css";
 import homeRect from "./images/home_rect.png";
 import logoHome from "./images/logo_home.png";
 import homeDescRect from "./images/home_desc_rect.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getAuthState, logoutUser } from "../features/auth/authSlice";
+import { clearPatient } from "../features/patient/patientSlice";
 
 const Welcome = () => {
+  const auth = useSelector(getAuthState);
+
+  const dispatch = useDispatch();
+
+  const handleLogout = async () => {
+    try {
+      await dispatch(logoutUser()).unwrap();
+      dispatch(clearPatient());
+    } catch (err) {
+      console.log("An error occured when logging out user---->", err);
+    }
+  };
+
+  const logInOutButton = auth?.currentUser ? (
+    <button onClick={handleLogout} className="nav_link_items_btn">
+      Logout
+      {/* <FontAwesomeIcon icon={faSignOut} /> */}
+    </button>
+  ) : (
+    <Link className="nav_links_item" to="/login">
+      Login
+    </Link>
+  );
   return (
     <div className="welcome">
       <nav className="wlayout_nav">
@@ -24,9 +50,7 @@ const Welcome = () => {
           <Link className="wnav_links_item dc" to="/dashboard">
             Dashboard
           </Link>
-          <Link className="wnav_links_item dc" to="/login">
-            Login
-          </Link>
+          {logInOutButton}
         </section>
       </nav>
       <img src={logoHome} alt="home" className="homeLogo" />
@@ -36,8 +60,8 @@ const Welcome = () => {
         <h1>Syncrypt Technology</h1>
         <i>
           aids the health organizations streamline its workflow by synchronizing
-          patient documents, reports resulting in optimization of hospital workflow
-          & provides less cumbersome way of managing patients records.
+          patient documents, reports resulting in optimization of hospital
+          workflow & provides less cumbersome way of managing patients records.
         </i>
         <br />
       </div>

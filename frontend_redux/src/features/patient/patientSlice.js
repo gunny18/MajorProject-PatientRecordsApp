@@ -21,6 +21,7 @@ export const registerPatient = createAsyncThunk(
         bmi,
         bloodGroup,
         insurance,
+        dob,
       } = initialState;
       const resp = await axios.post(
         "/patients",
@@ -33,6 +34,7 @@ export const registerPatient = createAsyncThunk(
           bmi,
           bloodGroup,
           insurance,
+          dob,
         }),
         {
           headers: {
@@ -84,7 +86,7 @@ export const uploadRecord = createAsyncThunk(
     console.log("Received patient Id as--->", initialState);
     try {
       const resp = await axios.post(
-        `/patients/${initialState.patientId}/upload?desc=${initialState.description}`,
+        `/patients/${initialState.patientId}/upload`,
         initialState.formData,
         {
           headers: {

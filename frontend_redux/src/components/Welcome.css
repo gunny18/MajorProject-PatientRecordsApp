@@ -73,3 +73,19 @@
   top: 172px;
   background-color: rgb(216, 211, 195);
 }
+
+.nav_link_items_btn {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: black;
+  margin-left: 30px;
+  font-weight: bolder;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.nav_link_items_btn:hover {
+  color: rgb(168, 157, 120);
+}
+

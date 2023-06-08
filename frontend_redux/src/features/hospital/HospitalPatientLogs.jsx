@@ -51,6 +51,8 @@ const HospitalPatientLogs = () => {
       <ul>
         <li>First Name: {currentPatient.firstName}</li>
         <li>Last Name: {currentPatient.lastName}</li>
+        <li>DOB: {currentPatient.dob}</li>
+        <li>Age: {currentPatient.age}</li>
         <li>Height: {currentPatient.height}</li>
         <li>Weight: {currentPatient.weight}</li>
         <li>Patient ID: {currentPatient.patientId}</li>
@@ -71,8 +73,12 @@ const HospitalPatientLogs = () => {
             <div key={record._id}>
               <li key={record._id}>
                 <p>{record.filename}</p>
-                <p>{record.metadata.description}</p>
               </li>
+
+              <i>
+                <p>{record.description}</p>
+              </i>
+
               <button onClick={(e) => handleDownload(e, record.filename)}>
                 {<FontAwesomeIcon icon={faFileDownload} />}
               </button>

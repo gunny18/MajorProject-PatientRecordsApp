@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link,  useNavigate } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import "./Layout.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOut } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +12,6 @@ import {
 } from "../features/hospital/hospitalSlice";
 
 const Layout = () => {
- 
   const navigate = useNavigate();
 
   const auth = useSelector(getAuthState);
@@ -40,11 +39,16 @@ const Layout = () => {
     }
   };
 
-  const logoutButton = auth?.currentUser ? (
-    <button onClick={handleLogout}>
-      <FontAwesomeIcon icon={faSignOut} />
+  const logInOutButton = auth?.currentUser ? (
+    <button onClick={handleLogout} className="nav_link_items_btn">
+      Logout
+      {/* <FontAwesomeIcon icon={faSignOut} /> */}
     </button>
-  ) : null;
+  ) : (
+    <Link className="nav_links_item" to="/login">
+      Login
+    </Link>
+  );
 
   const logoutButtonHosp = hospitalAuth?.hospitalId ? (
     <button onClick={handleLogoutHosp}>
@@ -55,10 +59,7 @@ const Layout = () => {
   return (
     <div className="layout">
       <nav className="layout_nav">
-        <section>
-          {logoutButton}
-          {logoutButtonHosp}
-        </section>
+        <section>{logoutButtonHosp}</section>
         <section className="nav_links">
           <Link className="nav_links_item" to="/">
             Home
@@ -75,9 +76,7 @@ const Layout = () => {
           <Link className="nav_links_item" to="/dashboard">
             Dashboard
           </Link>
-          <Link className="nav_links_item" to="/login">
-            Login
-          </Link>
+          {logInOutButton}
         </section>
       </nav>
       <div className="layout_container">

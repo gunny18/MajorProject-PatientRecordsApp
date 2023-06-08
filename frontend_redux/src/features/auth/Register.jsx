@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import "./Register.css";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { getAuthRegisterStatus, registerUser } from "./authSlice";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "./images/logo.png"
+import logo from "./images/logo.png";
 import backRect from "./images/background_register_rect.png";
 
-
 const Register = () => {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const uid = searchParams.get("uid");
 
@@ -36,6 +36,7 @@ const Register = () => {
       await dispatch(registerUser({ user, email, pwd, uid })).unwrap();
       setUser("");
       setPwd("");
+      navigate("/login");
     } catch (error) {
       console.log("An error occured when registering user - in component");
       console.log(error);
@@ -54,7 +55,7 @@ const Register = () => {
           <h1>{errMsg}</h1>
         </div>
         <form className="register__form" onSubmit={handleSubmit}>
-          <img src={logo} className="logo" alt="logo"/>
+          <img src={logo} className="logo" alt="logo" />
           <h1>Create an account</h1>
 
           <div>
@@ -106,7 +107,7 @@ const Register = () => {
   return (
     <div className="register">
       {content}
-      <img className="register_rect" src={backRect} alt="background rect"/>
+      <img className="register_rect" src={backRect} alt="background rect" />
       <section className="register_heading">
         <h1>Register</h1>
         <h1> &nbsp; &nbsp; &nbsp; Here!</h1>

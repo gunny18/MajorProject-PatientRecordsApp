@@ -17,13 +17,12 @@ const PatientRecords = () => {
 
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     const getRecords = async () => {
       try {
-          (await dispatch(
-            fetchRecords({ patientId: currentPatient.patientId })
-          ).unwrap());
+        await dispatch(
+          fetchRecords({ patientId: currentPatient.patientId })
+        ).unwrap();
       } catch (error) {
         console.log(error?.message);
       }
@@ -49,6 +48,9 @@ const PatientRecords = () => {
       {patientRecords.map((record) => (
         <div key={record._id}>
           <li key={record._id}>{record.filename}</li>
+          <i>
+            <p>{record.description}</p>
+          </i>
           <button onClick={(e) => handleDownload(e, record.filename)}>
             {<FontAwesomeIcon icon={faFileDownload} />}
           </button>

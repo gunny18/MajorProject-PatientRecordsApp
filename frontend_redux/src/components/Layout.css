@@ -1,30 +1,44 @@
-.layout{
+.layout {
   height: 100vh;
 }
 
-.layout_container{
+.layout_container {
   height: 100vh;
 }
 
-
-.layout_nav{
-  background-color: rgb(216,211,195);
+.layout_nav {
+  background-color: rgb(216, 211, 195);
   padding: 25px;
 }
 
-.nav_links{
+.nav_links {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.nav_links_item{
+.nav_links_item {
   text-decoration: none;
   color: black;
   margin-left: 30px;
   font-weight: bolder;
 }
 
-.nav_links_item:hover{
+.nav_links_item:hover {
+  color: rgb(168, 157, 120);
+}
+
+.nav_link_items_btn {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: black;
+  margin-left: 30px;
+  font-weight: bolder;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.nav_link_items_btn:hover {
   color: rgb(168, 157, 120);
 }
