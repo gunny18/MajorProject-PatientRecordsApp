@@ -1,21 +1,12 @@
 import React from "react";
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import "./Layout.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuthState, logoutUser } from "../features/auth/authSlice";
 import { clearPatient } from "../features/patient/patientSlice";
-import {
-  getHospitalAuthState,
-  logoutHospital,
-} from "../features/hospital/hospitalSlice";
 
 const Layout = () => {
-  const navigate = useNavigate();
-
   const auth = useSelector(getAuthState);
-  const hospitalAuth = useSelector(getHospitalAuthState);
 
   const dispatch = useDispatch();
 
@@ -27,22 +18,9 @@ const Layout = () => {
       console.log("An error occured when logging out user---->", err);
     }
   };
-
-  const handleLogoutHosp = async () => {
-    try {
-      await dispatch(
-        logoutHospital({ hospitalId: hospitalAuth.hospitalId })
-      ).unwrap();
-      navigate("/hospital");
-    } catch (err) {
-      console.log("An error occured when logging out hospital user---->", err);
-    }
-  };
-
   const logInOutButton = auth?.currentUser ? (
     <button onClick={handleLogout} className="nav_link_items_btn">
       Logout
-      {/* <FontAwesomeIcon icon={faSignOut} /> */}
     </button>
   ) : (
     <Link className="nav_links_item" to="/login">
@@ -50,16 +28,10 @@ const Layout = () => {
     </Link>
   );
 
-  const logoutButtonHosp = hospitalAuth?.hospitalId ? (
-    <button onClick={handleLogoutHosp}>
-      <FontAwesomeIcon icon={faSignOut} />
-    </button>
-  ) : null;
-
   return (
     <div className="layout">
       <nav className="layout_nav">
-        <section>{logoutButtonHosp}</section>
+        {/* <section>{logoutButtonHosp}</section> */}
         <section className="nav_links">
           <Link className="nav_links_item" to="/">
             Home

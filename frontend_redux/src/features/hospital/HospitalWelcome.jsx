@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import "./HospitalWelcome.css";
 import clogo from "./images/logo_white_3.png";
+import HospNav from "./HospNav";
 
 const HospitalWelcome = () => {
   return (
     <div className="app">
+      <HospNav />
       <div className="container">
         <img src={clogo} className="logo_hosp" alt="hosp logo"></img>
         <h1 className="title">Welcome To Hospital Portal</h1>

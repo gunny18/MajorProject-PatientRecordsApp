@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
 
-.logo_hosp{
+.logo_hosp {
   width: 500px;
   margin: 80px;
-  right:50px;
+  right: 50px;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.animated-typing{
+.animated-typing {
   margin: 20px;
 }
-  
 
-.app{
+.app {
   background-image: url(images/welcome_hosp.png);
   background-size: cover;
   display: flex;
@@ -27,14 +26,14 @@
   height: 100vh;
   width: 100vw;
 }
-.title{
-  font-family: 'Merriweather', serif;
+.title {
+  font-family: "Merriweather", serif;
   color: rgb(255, 255, 255);
   font-size: 80px;
   font-weight: 800;
 }
-.app span{
-  font-family:'Source Sans Pro', sans-serif; ;
+.app span {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 3rem;
   color: white;
   font-weight: 600;
@@ -58,8 +57,13 @@
 } */
 
 .btn-pink {
-  background-image: linear-gradient(to right, #FF512F 0%, #DD2476  51%, #FF512F  100%);
-  font-family: 'Merriweather', serif;
+  background-image: linear-gradient(
+    to right,
+    #ff512f 0%,
+    #dd2476 51%,
+    #ff512f 100%
+  );
+  font-family: "Merriweather", serif;
   font-size: 20px;
   font-weight: bold;
   margin: 10px;
@@ -67,7 +71,7 @@
   /* text-align: center; */
   transition: 0.5s;
   background-size: 200% auto;
-  color: rgb(255, 255, 255) ;            
+  color: rgb(255, 255, 255);
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   display: block;
@@ -78,23 +82,27 @@
 }
 
 .btn-pink:hover {
- background-position: right center; /* change the direction of the change here */
+  background-position: right center; /* change the direction of the change here */
   color: #fff;
-    
 }
 
 .btn-purple {
   text-decoration: none;
-  background-image: linear-gradient(to right, #614385 0%, #516395  51%, #614385  100%);
-  font-family: 'Merriweather', serif;
+  background-image: linear-gradient(
+    to right,
+    #614385 0%,
+    #516395 51%,
+    #614385 100%
+  );
+  font-family: "Merriweather", serif;
   font-size: 20px;
   font-weight: bold;
   margin: 10px;
   padding: 20px 58px;
-  text-align: center; 
+  text-align: center;
   transition: 0.5s;
   background-size: 200% auto;
-  color: rgb(255, 255, 255);            
+  color: rgb(255, 255, 255);
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   display: block;
@@ -108,13 +116,12 @@
   color: #fff;
 }
 
-.login_txt{
+.login_txt {
   text-decoration: none;
-  color: rgb(255, 255, 255); 
-  
+  color: rgb(255, 255, 255);
 }
 
-.buttons_hosp{
+.buttons_hosp {
   display: flex;
   flex-direction: row;
   margin: 20px;
@@ -122,8 +129,4 @@
   gap: 10px;
 }
 
-  
 
-  
-
-   

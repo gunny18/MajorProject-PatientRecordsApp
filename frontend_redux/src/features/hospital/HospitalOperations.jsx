@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getHospitalAuthState, fetchActivePatients } from "./hospitalSlice";
+import HospOpsNav from "./HospOpsNav";
+
 
 const HospitalOperations = () => {
   const hospitalAuth = useSelector(getHospitalAuthState);
@@ -34,6 +36,7 @@ const HospitalOperations = () => {
   console.log("hospital auth state--->", hospitalAuth);
   return (
     <div>
+      <HospOpsNav/>
       {fetchActivePatientButton}
       <h1>Active Patients</h1>
       {activePatientIds?.length !== 0 ? (

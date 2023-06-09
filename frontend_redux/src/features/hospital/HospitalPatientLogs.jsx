@@ -11,6 +11,7 @@ import {
 } from "../patient/patientSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
+import HospOpsNav from "./HospOpsNav";
 
 const HospitalPatientLogs = () => {
   const { id: patientId } = useParams();
@@ -92,6 +93,7 @@ const HospitalPatientLogs = () => {
     );
   return (
     <div>
+      <HospOpsNav />
       <h1>Patient Logs</h1>
       <h3>Patient General Details</h3>
       {patientList}

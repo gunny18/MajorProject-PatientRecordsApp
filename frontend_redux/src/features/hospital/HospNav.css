@@ -1,0 +1,33 @@
+.hospNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 50px;
+  min-width: 100%;
+}
+
+.hospNavLinks {
+  text-decoration: none;
+  color: white;
+  transition: 0.1s ease-in;
+}
+
+.hospNavLinks:hover {
+  color: #5708b7;
+  cursor: pointer;
+}
+
+.hospLogoutBtn {
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: center;
+  margin-left: 36px;
+  margin-top: 7px;
+}
+
+.hospLogoutBtn:hover {
+  color: #5708b7;
+  cursor: pointer;
+}

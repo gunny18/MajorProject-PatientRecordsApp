@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { uploadRecord } from "../features/patient/patientSlice";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import HospOpsNav from "../features/hospital/HospOpsNav";
 
 const UploadRecord = () => {
   const { id: patientId } = useParams();
@@ -31,9 +32,7 @@ const UploadRecord = () => {
       formData.append("file", file);
       formData.append("fileName", file.name);
       formData.append("description", description);
-      await dispatch(
-        uploadRecord({ formData, patientId })
-      ).unwrap();
+      await dispatch(uploadRecord({ formData, patientId })).unwrap();
       navigate(`/hospital/options`);
     } catch (err) {
       console.log("Error in upload record component---->", err?.message);
@@ -44,6 +43,7 @@ const UploadRecord = () => {
 
   return (
     <div>
+      <HospOpsNav />
       <h1>Upload a record</h1>
       <form onSubmit={handleUploadRecord}>
         <input type="file" name="file" onChange={handleFileChange} />

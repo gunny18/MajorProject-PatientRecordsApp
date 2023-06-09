@@ -1,11 +1,13 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import HospOpsNav from "./HospOpsNav";
 
 const HospitalPatientOptions = () => {
   const { id } = useParams();
   console.log(id);
   return (
     <div>
+      <HospOpsNav />
       <h1>HospitalPatientOptions</h1>
       <ul>
         <li>
