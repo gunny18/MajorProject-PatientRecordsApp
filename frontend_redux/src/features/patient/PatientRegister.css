@@ -1,10 +1,92 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Merriweather:wght@700&family=Ubuntu:wght@500&display=swap');
+@import url(//db.onlinewebfonts.com/c/9e00143409affcb46a1ae58634aa64be?family=Sofia+Pro);
 
 .Patient_Registration {
   background-image: url(../patient/images/pat_reg.jpg);
   background-size: cover;
   right: -200px;
-  padding-bottom: 80px;
+  /* padding-bottom: 80px; */
+  display: flex;
+  flex-direction: row;
+  /* overflow: hidden; */
+}
+
+
+.wrapper{
+  width: 500px;
+  box-sizing: content-box;
+  background-color:transparent;
+  /* padding: 50px 40px; */
+  /* padding-top: 30px; */
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.words{
+  overflow: hidden;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pat_reg_head{
+  margin-top: 50px;
+  margin-left: 100px;
+  width: 800px;
+  font-family: 'Merriweather', serif;
+  font-size: 100px;
+  font-weight: 800;
+}
+
+.pat_msg_title{
+  width: 300px;
+  font-family: "Sofia Pro";
+  font-size: 40px;
+  font-weight: bold;
+}
+.rotate{
+  font-family: 'Caveat', cursive;
+  width: 300px;
+  font-size: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  padding-left: 10px;
+  color: #9e8b59;
+  animation: spin_words 6s infinite;
+}
+
+@keyframes spin_words{
+  10%{
+      transform: translateY(-112%);
+  }
+  25%{
+      transform: translateY(-100%);
+  }
+  35%{
+      transform: translateY(-212%);
+  }
+  50%{
+      transform: translateY(-200%);
+  }
+  60%{
+      transform: translateY(-312%);
+  }
+  75%{
+      transform: translateY(-300%);
+  }
+  85%{
+      transform: translateY(-412%);
+  }
+  100%{
+      transform: translateY(-400%);
+  }
 }
 
 .form_div {
@@ -13,7 +95,7 @@
   right: 0;
   backdrop-filter: blur(5px);
   width: 400px;
-  margin-left: 1000px;
+  margin-left: 0px;
   margin-top: 40px;
   /* margin-bottom: 40px; */
   padding-bottom: 40px;

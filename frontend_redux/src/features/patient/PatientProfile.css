@@ -1,0 +1,29 @@
+.patientProfile {
+  min-height: 100%;
+  background-image: url("./images/prof_back.png");
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-size: contain;
+  background-position: 50%;
+}
+
+.patientProfileAvatars {
+  margin-left: 32%;
+}
+
+.patientProfileDetails {
+  margin-right: 10%;
+}
+
+.patientProfileDetails ul {
+  list-style: none;
+  line-height: 1.5;
+}
+
+.patientProfileDetails h1 {
+  margin-bottom: 15px;
+}
+
+

@@ -22,6 +22,7 @@ export const registerPatient = createAsyncThunk(
         bloodGroup,
         insurance,
         dob,
+        gender,
       } = initialState;
       const resp = await axios.post(
         "/patients",
@@ -35,6 +36,7 @@ export const registerPatient = createAsyncThunk(
           bloodGroup,
           insurance,
           dob,
+          gender,
         }),
         {
           headers: {

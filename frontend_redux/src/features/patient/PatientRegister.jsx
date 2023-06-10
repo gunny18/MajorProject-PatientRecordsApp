@@ -17,7 +17,8 @@ const PatientRegister = () => {
   const [bloodGroup, setBloodGroup] = useState("");
   const [insurance, setInsurance] = useState("");
   const [dob, setDob] = useState("");
-  console.log("DOB----->",dob,typeof(dob))
+  const [gender, setGender] = useState();
+  console.log("DOB----->", dob, typeof dob);
   const dispatch = useDispatch();
   const handleRegisterPatient = async (e) => {
     try {
@@ -29,7 +30,8 @@ const PatientRegister = () => {
         bloodGroup,
         patientId: auth.currentUser.patientId,
         insurance,
-        dob
+        dob,
+        gender,
       };
       e.preventDefault();
       await dispatch(registerPatient(patientDetails)).unwrap();
@@ -39,7 +41,8 @@ const PatientRegister = () => {
       setHeight(0);
       setBloodGroup("");
       setInsurance("");
-      setDob("")
+      setDob("");
+      setGender("");
       console.log("Successfully registered patient detials");
       navigate("/dashboard/patient/profile");
     } catch (error) {
@@ -68,7 +71,20 @@ const PatientRegister = () => {
     auth.currentUser.patientDetails === false ? (
       <div className="Patient_Registration">
         {/* <img src={pat_reg_img} className="pat_reg_back" alt='txt'></img> */}
-        <h1>Register Patient Details</h1>
+        <div className="pat_reg_info">
+          <h1 className="pat_reg_head">Hello</h1>
+          <h1 className="pat_reg_us_name">{auth?.currentUser?.username}</h1>
+          <div className="wrapper">
+            <p className="pat_msg_title">Enter Your Basic Details Such As </p>
+            <div className="words">
+              <span className="rotate">Name</span>
+              <span className="rotate">DOB</span>
+              <span className="rotate">Weight</span>
+              <span className="rotate">Height</span>
+              <span className="rotate">Insurance</span>
+            </div>
+          </div>
+        </div>
         <div className="form_div">
           <form className="pat_reg_form" onSubmit={handleRegisterPatient}>
             <label htmlFor="firstname">First Name: </label>
@@ -95,6 +111,18 @@ const PatientRegister = () => {
               value={dob}
               onChange={(e) => setDob(e.target.value)}
             />
+            <label htmlFor="gender">Gender: </label>
+            <select
+              name="gender"
+              value={gender}
+              id="gender"
+              onChange={(e) => setGender(e.target.value)}
+            >
+              <option value="select category">Select category</option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+              <option value="others">others</option>
+            </select>
             <label htmlFor="weight">Weight(kg): </label>
             <input
               type="number"
