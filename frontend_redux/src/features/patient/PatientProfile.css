@@ -1,29 +1,46 @@
-.patientProfile {
-  min-height: 100%;
-  background-image: url("./images/prof_back.png");
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  background-size: contain;
-  background-position: 50%;
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Merriweather+Sans:ital,wght@0,700;0,800;1,700;1,800&family=Merriweather:wght@700&family=Ubuntu:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+
+.pat_det_back {
+  background-color: rgb(232, 229, 220);
+  background-image: url(./images/pat_prof_back.png);
+  background-attachment: local;
+  background-position: center;
+  height: 721px;
+  background-size: 1300px;
+  /* background-position: 120px; */
+  background-repeat: no-repeat;
+}
+.det_us_name {
+  display: block;
+  width: fit-content;
+  /* margin-right: 100px; */
+  position: relative;
+  left: 552px;
+  top: 190px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  padding-bottom: 30px;
+  overflow: hidden;
 }
 
-.patientProfileAvatars {
-  margin-left: 32%;
+.det_tab {
+  position: relative;
+  top: 200px;
+  padding: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  position: relative;
+  left: 550px;
+  width: 180px;
+  height: 100px;
+  background-color: rgb(232, 229, 220);
+  border-radius: 10px;
 }
 
-.patientProfileDetails {
-  margin-right: 10%;
+.avtSection {
+  position: absolute;
+  left: 37%;
+  top: 25%;
 }
-
-.patientProfileDetails ul {
-  list-style: none;
-  line-height: 1.5;
-}
-
-.patientProfileDetails h1 {
-  margin-bottom: 15px;
-}
-
-

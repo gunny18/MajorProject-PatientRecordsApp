@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { getAuthState } from "../auth/authSlice";
+import { getAuthState } from "../auth/authSlice";
 import {
-  // fetchPatient,
   fetchRecords,
   getPatient,
   getPatientRecords,
@@ -10,10 +9,12 @@ import {
 } from "./patientSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
+import './PatientRecords.css'
 
 const PatientRecords = () => {
   const currentPatient = useSelector(getPatient);
   const patientRecords = useSelector(getPatientRecords);
+  const auth = useSelector(getAuthState)
 
   const dispatch = useDispatch();
 
@@ -46,24 +47,28 @@ const PatientRecords = () => {
   const patientRecordList = patientRecords ? (
     <ul>
       {patientRecords.map((record) => (
-        <div key={record._id}>
-          <li key={record._id}>{record.filename}</li>
+        <div className="rec_table" key={record._id}>
+          <strong className="rec_name" key={record._id}>{record.filename}</strong>
           <i>
             <p>{record.description}</p>
           </i>
-          <button onClick={(e) => handleDownload(e, record.filename)}>
-            {<FontAwesomeIcon icon={faFileDownload} />}
+          <button className="download_btn" onClick={(e) => handleDownload(e, record.filename)}>
+            {<FontAwesomeIcon icon={faFileDownload} />}Download
           </button>
+          <hr/>
         </div>
       ))}
     </ul>
   ) : (
-    <p>Patient does not have any records</p>
+    <p className="no_rec_msg">There are no records present!</p>
   );
   return (
-    <div>
-      <h1>Patient Records</h1>
-      {patientRecordList}
+    <div className="my_rec">
+      <h1 className="us_name_id">
+        {auth?.currentUser.username}
+        <p>{auth?.currentUser?.patientId}</p>
+      </h1>
+      <div className="rec_list">{patientRecordList}</div>
     </div>
   );
 };

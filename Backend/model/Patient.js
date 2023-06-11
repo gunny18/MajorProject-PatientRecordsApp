@@ -22,6 +22,9 @@ const patientSchema = new Schema({
     type: String,
     default: "000",
   },
+  gender: {
+    type: String,
+  },
   firstName: {
     type: String,
     required: true,

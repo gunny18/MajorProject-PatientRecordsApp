@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./HospitalPatientLogs.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPatient,
@@ -11,7 +12,9 @@ import {
 } from "../patient/patientSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
-import HospOpsNav from "./HospOpsNav";
+import { Avatar } from "@mui/material";
+import { deepOrange } from "@mui/material/colors";
+import HospOpsNav from "./HospOpsNav"
 
 const HospitalPatientLogs = () => {
   const { id: patientId } = useParams();
@@ -48,19 +51,57 @@ const HospitalPatientLogs = () => {
   console.log("patient---->", currentPatient);
   console.log("patient records---->", patientRecords);
   const patientList = currentPatient ? (
-    <div>
-      <ul>
-        <li>First Name: {currentPatient.firstName}</li>
-        <li>Last Name: {currentPatient.lastName}</li>
-        <li>DOB: {currentPatient.dob}</li>
-        <li>Age: {currentPatient.age}</li>
-        <li>Height: {currentPatient.height}</li>
-        <li>Weight: {currentPatient.weight}</li>
-        <li>Patient ID: {currentPatient.patientId}</li>
-        <li>BMI: {currentPatient.bmi}</li>
-        <li>Blood Group: {currentPatient.bloodGroup}</li>
-        <li>Insurance Policy No: {currentPatient.insurance}</li>
-      </ul>
+    <div className="log_det_back">
+      <section className="avtSectionHosp">
+        <Avatar sx={{ bgcolor: deepOrange[500] }}>
+          {currentPatient?.firstName[0]}
+        </Avatar>
+        <p>{currentPatient?.firstName}</p>
+      </section>
+      <h1 className="det_name">
+        {currentPatient.firstName} {currentPatient.lastName}
+      </h1>
+      <div className="table_disp">
+        <table className="table_disp">
+          <tr>
+            <td className="tab">
+              <strong>{currentPatient.patientId}</strong>
+              <br />
+              Patient ID{" "}
+            </td>
+            <td className="tab">
+              <strong>{currentPatient.dob}</strong>
+              <br /> DOB
+            </td>
+            <td className="tab">
+              <strong>{currentPatient.age} Yrs</strong>
+              <br /> Age
+            </td>
+            <td className="tab">
+              <strong>{currentPatient.height} cm</strong>
+              <br /> Height
+            </td>
+          </tr>
+          <tr>
+            <td className="tab">
+              <strong>{currentPatient.weight} kg</strong>
+              <br /> Weight
+            </td>
+            <td className="tab">
+              <strong>{currentPatient.bmi} Kg/cm</strong>
+              <br /> BMI
+            </td>
+            <td className="tab">
+              <strong>{currentPatient.bloodGroup}</strong>
+              <br /> Blood Group
+            </td>
+            <td className="tab">
+              <strong>{currentPatient.insurance}</strong>
+              <br /> Policy No
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
   ) : (
     <p>No patient details exist</p>
@@ -71,17 +112,20 @@ const HospitalPatientLogs = () => {
       <section>
         <ul>
           {patientRecords?.map((record) => (
-            <div key={record._id}>
-              <li key={record._id}>
+            <div className="logs_table" key={record._id}>
+              <strong className="doc_name" key={record._id}>
                 <p>{record.filename}</p>
-              </li>
+              </strong>
 
               <i>
                 <p>{record.description}</p>
               </i>
 
-              <button onClick={(e) => handleDownload(e, record.filename)}>
-                {<FontAwesomeIcon icon={faFileDownload} />}
+              <button
+                className="down_btn"
+                onClick={(e) => handleDownload(e, record.filename)}
+              >
+                {<FontAwesomeIcon icon={faFileDownload} />}&nbsp; Download
               </button>
               <hr />
             </div>
@@ -92,14 +136,18 @@ const HospitalPatientLogs = () => {
       <p>Patient does not have any records</p>
     );
   return (
-    <div>
-      <HospOpsNav />
-      <h1>Patient Logs</h1>
-      <h3>Patient General Details</h3>
-      {patientList}
-      <h3>Patient Records</h3>
-      {patientRecordsList}
-    </div>
+    <section>
+      <HospOpsNav/>
+      <div className="logs">
+        {/* <h1>Patient Logs</h1>
+        <h3>Patient General Details</h3> */}
+        {patientList}
+      </div>
+      <div className="pat_log">
+        <h3 className="pat_rec_head">PATIENT RECORDS</h3>
+        <div className="logs_table_border">{patientRecordsList}</div>
+      </div>
+    </section>
   );
 };
 

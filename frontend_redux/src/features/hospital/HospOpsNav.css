@@ -3,8 +3,8 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 50px;
   min-width: 100%;
+  background-color: rgb(232, 229, 220);
 }
 
 .hospOpsNavLinks {

@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Merriweather+Sans:ital,wght@0,700;0,800;1,700;1,800&family=Merriweather:wght@700&family=Ubuntu:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+@import url(//db.onlinewebfonts.com/c/9e00143409affcb46a1ae58634aa64be?family=Sofia+Pro);
+
+.pat_log {
+  background-color: rgb(232, 229, 220);
+  /* margin-bottom: 50px; */
+  padding-bottom: 40px;
+}
+.logs_table_border {
+  box-shadow: 1px 1px 5px rgb(0, 0, 0);
+  border-color: #fff;
+  background-color: #fff;
+  border-style: solid;
+  border-radius: 30px;
+  margin-left: 124px;
+  margin-right: 124px;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+.pat_rec_head {
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  transform: rotate(-90deg);
+  transform-origin: left;
+  margin-left: 70px;
+  position: relative;
+  top: 550px;
+  display: inline-block;
+}
+
+.down_btn {
+  text-decoration: none;
+  background-image: linear-gradient(
+    to right,
+    #695022 0%,
+    #d6c287 51%,
+    #6c5307 100%
+  );
+  font-family: "Merriweather", serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  display: block;
+  border: none;
+  outline: hidden;
+  cursor: pointer;
+  width: 160px;
+  height: 40px;
+}
+
+.down_btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+}
+
+.doc_name {
+  font-family: "Source Sans Pro";
+  font-size: 20px;
+  font-weight: 800;
+  /* margin: 10px; */
+}
+
+.logs_table {
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.det_name {
+  display: block;
+  width: fit-content;
+  /* margin-right: 100px; */
+  position: relative;
+  left: 552px;
+  top: 190px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+.logs {
+  background-color: rgb(232, 229, 220);
+  background-image: url(./images/log_details_back.png);
+  height: 600px;
+  background-size: contain;
+  background-position: 120px;
+  background-repeat: no-repeat;
+}
+
+/* .table_disp{
+    position: relative;
+    left: 200px;
+    height: 300px;
+    border-color: aquamarine;
+    width: 500px;
+} */
+
+.tab {
+  position: relative;
+  top: 200px;
+  padding: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  position: relative;
+  left: 550px;
+  width: 180px;
+  height: 100px;
+  background-color: rgb(232, 229, 220);
+  border-radius: 10px;
+}
+
+.avtSectionHosp {
+  position: absolute;
+  top: 15%;
+  left: 37%;
+}

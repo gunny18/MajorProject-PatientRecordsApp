@@ -12,6 +12,7 @@ const registerPatient = async (req, res) => {
     bloodGroup,
     insurance,
     dob,
+    gender,
   } = req.body;
   const canRegister = [
     patientId,
@@ -22,6 +23,7 @@ const registerPatient = async (req, res) => {
     bloodGroup,
     insurance,
     dob,
+    gender,
   ].every(Boolean);
   if (!canRegister) {
     return res
@@ -54,6 +56,7 @@ const registerPatient = async (req, res) => {
     insurance,
     dob,
     age,
+    gender,
   });
 
   const updatedUser = await User.findOneAndUpdate(
