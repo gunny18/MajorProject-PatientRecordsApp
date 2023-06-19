@@ -15,7 +15,7 @@ const HospitalOperations = () => {
           <ul>
             <li>
               <Link to={`/hospital/options/patients/${patientId}/logs`}>
-                Logs
+                Profile
               </Link>
             </li>
             <li>
@@ -47,6 +47,7 @@ const HospitalOperations = () => {
     <div>
       <HospOpsNav />
       {fetchActivePatientButton}
+      <h1>{hospitalAuth?.hospitalName}</h1>
       <h1>Active Patients</h1>
       {activePatientIds?.length !== 0 ? (
         <ul>{activePatientLinks}</ul>

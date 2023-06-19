@@ -11,6 +11,8 @@ import HospOpsNav from "../features/hospital/HospOpsNav";
 const UploadRecord = () => {
   const { id: patientId } = useParams();
 
+  const [showUploaded, setShowUploaded] = useState(false);
+
   const currentPatient = useSelector(getPatient);
 
   const dispatch = useDispatch();
@@ -46,7 +48,12 @@ const UploadRecord = () => {
       formData.append("fileName", file.name);
       formData.append("description", description);
       await dispatch(uploadRecord({ formData, patientId })).unwrap();
-      navigate(`/hospital/options`);
+      setShowUploaded(true);
+      setTimeout(() => {
+        setShowUploaded(false)
+        navigate(`/hospital/options`);
+      }, 2000);
+      // navigate(`/hospital/options`);
     } catch (err) {
       console.log("Error in upload record component---->", err?.message);
     }
@@ -58,9 +65,12 @@ const UploadRecord = () => {
 
   return (
     <div className="up_back">
-      <HospOpsNav/>
+      <HospOpsNav />
+      {showUploaded && <p className="uploadedElement">Uploaded Record, Redirecting to options page....</p>}
       <div>
-        <h1 className="nameDets">{currentPatient?.firstName} {currentPatient?.patientId}</h1>
+        <h1 className="nameDets">
+          {currentPatient?.firstName} {currentPatient?.patientId}
+        </h1>
         <form className="upload_form" onSubmit={handleUploadRecord}>
           <input
             className="choose_file"
