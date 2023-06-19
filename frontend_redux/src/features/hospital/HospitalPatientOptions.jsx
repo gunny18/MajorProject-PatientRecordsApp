@@ -11,7 +11,7 @@ const HospitalPatientOptions = () => {
       <h1>HospitalPatientOptions</h1>
       <ul>
         <li>
-          <Link to={`/hospital/options/patients/${id}/logs`}>Logs</Link>
+          <Link to={`/hospital/options/patients/${id}/logs`}>Profile</Link>
         </li>
         <li>
           <Link to={`/hospital/options/patients/${id}/upload`}>Upload</Link>
