@@ -80,9 +80,23 @@
 }
 
 .nameDets {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 800;
+  font-size: 60px;
   position: absolute;
-  left: 46%;
-  top: 20%;
+  left: 45%;
+  top: 14%;
+}
+
+.nameID{
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  position: absolute;
+  left: 45%;
+  top: 25%;
+  color: rgb(188, 179, 161)
+
 }
 
 .uploadedElement{

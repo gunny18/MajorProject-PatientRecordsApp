@@ -41,12 +41,13 @@ const Welcome = () => {
           <Link className="wnav_links_item" to="/about">
             About
           </Link>
-          <Link className="wnav_links_item" to="/register">
-            Register
-          </Link>
-          <Link className="wnav_links_item dc" to="/hospital">
+          <Link className="wnav_links_item" to="/hospital">
             Hospital Portal
           </Link>
+          <Link className="wnav_links_item dc" to="/register">
+            Register
+          </Link>
+          
           <Link className="wnav_links_item dc" to="/dashboard">
             Dashboard
           </Link>

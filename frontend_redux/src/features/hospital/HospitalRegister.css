@@ -2,11 +2,11 @@
 
 
 .hospRegister {
-  
-  background-color: rgb(216, 211, 195);
+  background-image: url("../hospital/images/new.png");
+  /* background-color: rgb(216, 211, 195); */
   background-repeat: repeat;
-  background-size: cover;
-  height: 800px;
+  background-size: contain;
+  height: 721px;
 }
 
 .hospImg {
@@ -65,9 +65,16 @@
   border: transparent;
   color: white;
   background-color: rgb(168, 157, 120);
+  cursor: pointer;
 }
 
+.hosp_register__button:hover{
+  background-color:rgb(169, 154, 105) ;
+}
+
+
 .hosp_register_heading {
+  color: rgb(238, 236, 230);
   font-family: 'Merriweather', serif;
   position: absolute;
   bottom: 385px;

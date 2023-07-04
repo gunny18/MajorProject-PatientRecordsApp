@@ -78,18 +78,23 @@
   margin-right: 100px;
 }
 .det_name {
-  display: block;
-  width: fit-content;
-  /* margin-right: 100px; */
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  margin-right: 100px;
   left: 552px;
   top: 190px;
   font-family: "Merriweather Sans", sans-serif;
   font-weight: 800;
   font-size: 60px;
+  /* padding-left: 100px; */
   padding-bottom: 30px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
+
 .logs {
   background-color: rgb(232, 229, 220);
   background-image: url(./images/log_details_back.png);
@@ -124,5 +129,23 @@
 .avtSectionHosp {
   position: absolute;
   top: 15%;
-  left: 37%;
+  left: 57%;
 }
+
+.no_rec_warn{
+  padding: 10px;
+  font-family: "Source Sans Pro";
+  color: rgb(255,114,94);
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+
+}
+.no_rec_img{
+  position: relative;
+  left: 310px;
+  height: 400px;
+}
+
+
+

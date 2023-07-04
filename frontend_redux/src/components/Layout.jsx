@@ -4,6 +4,7 @@ import "./Layout.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuthState, logoutUser } from "../features/auth/authSlice";
 import { clearPatient } from "../features/patient/patientSlice";
+import st_logo from "./images/logo.png";
 
 const Layout = () => {
   const auth = useSelector(getAuthState);
@@ -31,6 +32,8 @@ const Layout = () => {
   return (
     <div className="layout">
       <nav className="layout_nav">
+        <img src={st_logo} alt="txt" className="st_logo"></img>
+        
         {/* <section>{logoutButtonHosp}</section> */}
         <section className="nav_links">
           <Link className="nav_links_item" to="/">
@@ -47,7 +50,7 @@ const Layout = () => {
           </Link>
           <Link className="nav_links_item" to="/dashboard">
             Dashboard
-          </Link>
+          </Link >
           {logInOutButton}
         </section>
       </nav>

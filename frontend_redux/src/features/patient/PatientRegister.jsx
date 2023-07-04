@@ -73,7 +73,7 @@ const PatientRegister = () => {
         {/* <img src={pat_reg_img} className="pat_reg_back" alt='txt'></img> */}
         <div className="pat_reg_info">
           <h1 className="pat_reg_head">Hello</h1>
-          <h1 className="pat_reg_us_name">{auth?.currentUser?.username}</h1>
+          <h1 className="pat_reg_us_name">{auth?.currentUser?.username}!</h1>
           <div className="wrapper">
             <p className="pat_msg_title">Enter Your Basic Details Such As </p>
             <div className="words">
@@ -119,9 +119,9 @@ const PatientRegister = () => {
               onChange={(e) => setGender(e.target.value)}
             >
               <option value="select category">Select category</option>
-              <option value="male">male</option>
-              <option value="female">female</option>
-              <option value="others">others</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="others">Others</option>
             </select>
             <label htmlFor="weight">Weight(kg): </label>
             <input

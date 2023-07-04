@@ -4,23 +4,21 @@ import { getPatient } from "./patientSlice";
 import "./PatientProfile.css";
 import { Avatar } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
-import { getAuthState } from "../auth/authSlice";
+
 
 const PatientProfile = () => {
   const currentPatient = useSelector(getPatient);
-  const auth = useSelector(getAuthState);
   const patientList = currentPatient ? (
     <div className="pat_det_back">
       <section className="avtSection">
-        <Avatar sx={{ bgcolor: deepOrange[500] }}>
+      <Avatar sx={{ bgcolor: deepOrange[500],width: 96, height: 96, fontWeight:800,fontSize:50,fontFamily:'Merriweather Sans' }}>
           {currentPatient?.firstName[0]}
         </Avatar>
-        <p>{auth?.currentUser?.username}</p>
       </section>
       <h1 className="det_us_name">
         {currentPatient.firstName} {currentPatient.lastName}
       </h1>
-      <div className="table_disp">
+      <div className="table_disp_cont">
         <table className="table_disp">
           <tr>
             <td className="det_tab">

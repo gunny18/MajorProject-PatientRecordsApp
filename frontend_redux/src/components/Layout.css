@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600;650;700&display=swap');
+
+:before,
+:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 .layout {
   height: 100vh;
+}
+
+.st_logo{
+  padding-left: 10px;
+  height: 50px;
 }
 
 .layout_container {
@@ -7,38 +21,77 @@
 }
 
 .layout_nav {
+  display: flex;
+  flex-direction: row;
+
   background-color: rgb(216, 211, 195);
-  padding: 25px;
+  padding: 10px;
 }
 
 .nav_links {
+  padding-left: 580px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
 .nav_links_item {
+  position: relative;
   text-decoration: none;
-  color: black;
-  margin-left: 30px;
-  font-weight: bolder;
+  font-family: 'Source Sans Pro';
+  color: #000000;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
 }
 
-.nav_links_item:hover {
+.nav_links_item:after{
+  content: "";
+  position: absolute;
+  background-color: rgb(169, 154, 105);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+.nav_links_item:hover{
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.nav_links_item:hover:after{
+  width: 100%;
+}
+
+/* .nav_links_item:hover {
   color: rgb(168, 157, 120);
+} */
+
+.nav_link_items_btn{
+  position: relative;
+  /* text-decoration: none; */
+  font-family: 'Source Sans Pro';
+  color: #000000;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: 0.5px;
 }
 
-.nav_link_items_btn {
-  text-decoration: none;
-  background-color: transparent;
-  border: none;
-  color: black;
-  margin-left: 30px;
-  font-weight: bolder;
-  font-size: 1em;
-  cursor: pointer;
+.nav_link_items_btn:after{
+  content: "";
+  position: absolute;
+  background-color: rgb(169, 154, 105);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
 }
-
-.nav_link_items_btn:hover {
-  color: rgb(168, 157, 120);
+.nav_link_items_btn:hover{
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.nav_link_items_btn:hover:after{
+  width: 100%;
 }

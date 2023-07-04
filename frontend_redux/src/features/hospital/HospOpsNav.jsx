@@ -22,7 +22,7 @@ const HospOpsNav = () => {
   };
   const logoutButtonHosp = hospitalAuth?.hospitalId ? (
     <button onClick={handleLogoutHosp} className="hospOpsLogoutBtn">
-      <FontAwesomeIcon icon={faSignOut} />
+      <FontAwesomeIcon icon={faSignOut}/>&nbsp;&nbsp;Logout
     </button>
   ) : null;
   return (
@@ -30,7 +30,7 @@ const HospOpsNav = () => {
       <Link to="/hospital" className="hospOpsNavLinks">
         Home
       </Link>
-      {logoutButtonHosp}
+      {logoutButtonHosp} 
     </nav>
   );
 };

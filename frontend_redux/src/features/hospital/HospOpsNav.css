@@ -1,20 +1,99 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+
 .hospOpsNav {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  padding-top: 10px;
+  padding-right: 40px;
   align-items: center;
   min-width: 100%;
+  background-color: #5708b700;
   background-color: rgb(232, 229, 220);
 }
 
 .hospOpsNavLinks {
+  position: relative;
+  text-decoration: none;
+  font-family: 'Source Sans Pro';
+  color: #000000;
+  font-size: 20px;
+  font-weight: 550;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
+padding-right: 20px;}
+
+.hospOpsNavLinks:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(169, 154, 105);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.hospOpsNavLinks:hover{
+  color: #ffffff;
+  transition: 0.3s;
+}
+.hospOpsNavLinks:hover:after{
+  width: 100%;
+}
+/* .hospNavLinks:hover {
+  color: #5708b7;
+  cursor: pointer;
+} */
+
+.hospOpsLogoutBtn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: relative;
+  text-decoration: none;
+  font-family: 'Source Sans Pro';
+  color: #000000;
+  font-size: 20px;
+  font-weight: 550;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
+}
+
+.hospOpsLogoutBtn:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(169, 154, 105);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.hospOpsLogoutBtn:hover{
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.hospOpsLogoutBtn:hover:after{
+  width: 100%;
+}
+
+/* .hospOpsNavLinks {
   text-decoration: none;
   color: black;
   transition: 0.1s ease-in;
 }
 
 .hospOpsNavLinks:hover {
-  color: #5708b7;
+  overflow-x: hidden;
+  font-size: 25px;
+  transition: 0.5s;
+  color: #b78b08;
   cursor: pointer;
 }
 
@@ -30,4 +109,4 @@
 .hospOpsLogoutBtn:hover {
   color: #5708b7;
   cursor: pointer;
-}
+} */

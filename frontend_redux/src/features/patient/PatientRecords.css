@@ -79,9 +79,14 @@
 .no_rec_msg{
     padding: 10px;
     font-family: "Source Sans Pro";
-    color: red;
+    color: rgb(255,114,94);
     font-size: 50px;
     font-weight: 800;
     text-align: center;
 
+}
+.no_file_img{
+    position: relative;
+    left: 310px;
+    height: 400px;
 }

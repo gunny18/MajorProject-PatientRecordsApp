@@ -1,33 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+
 .hospNav {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
-  margin-left: 50px;
+  margin-left: 0px;
   min-width: 100%;
 }
 
 .hospNavLinks {
+  position: relative;
   text-decoration: none;
-  color: white;
-  transition: 0.1s ease-in;
+  font-family: 'Source Sans Pro';
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 550;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
+padding-right: 20px;}
+
+.hospNavLinks:after {
+  content: "";
+  position: absolute;
+  background-color: #ff3c78;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
 }
 
-.hospNavLinks:hover {
+.hospNavLinks:hover{
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.hospNavLinks:hover:after{
+  width: 100%;
+}
+/* .hospNavLinks:hover {
   color: #5708b7;
   cursor: pointer;
-}
+} */
 
 .hospLogoutBtn {
+  cursor: pointer;
   background: transparent;
   border: none;
-  color: white;
-  text-align: center;
-  margin-left: 36px;
-  margin-top: 7px;
+  position: relative;
+  text-decoration: none;
+  font-family: 'Source Sans Pro';
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 550;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
+}
+
+.hospLogoutBtn:after {
+  content: "";
+  position: absolute;
+  background-color: #ff3c78;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.hospLogoutBtn:hover{
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.hospLogoutBtn:hover:after{
+  width: 100%;
+}
+
+/* .hospLogoutBtn {
+  background: transparent;
+  border: none;
+  position: relative;
+  text-decoration: none;
+  font-family: 'Source Sans Pro';
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 550;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
 }
 
 .hospLogoutBtn:hover {
   color: #5708b7;
   cursor: pointer;
-}
+} */

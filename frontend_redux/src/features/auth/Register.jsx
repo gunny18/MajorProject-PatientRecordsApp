@@ -4,6 +4,7 @@ import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { getAuthRegisterStatus, registerUser } from "./authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "./images/logo.png";
+import sign_up_img from "./images/SignUp.png";
 import backRect from "./images/background_register_rect.png";
 
 const Register = () => {
@@ -54,8 +55,10 @@ const Register = () => {
         <div className={errMsg ? "err" : "hide"}>
           <h1>{errMsg}</h1>
         </div>
+        
         <form className="register__form" onSubmit={handleSubmit}>
-          <img src={logo} className="logo" alt="logo" />
+        
+          <img src={logo} className="logo" alt="logo"></img>
           <h1>Create an account</h1>
 
           <div>
@@ -112,7 +115,10 @@ const Register = () => {
         <h1>Register</h1>
         <h1> &nbsp; &nbsp; &nbsp; Here!</h1>
       </section>
+      <img src={sign_up_img} className="sign_up" alt="sign_up" />
     </div>
+    
+    
   );
 };
 

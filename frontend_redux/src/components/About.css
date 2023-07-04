@@ -1,23 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+.mission
+{
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 70px;
 
+}
 .fnt {
+    font-family: "Source Sans Pro", sans-serif;
+  font-size: 70px;
   font-family: "Source Sans Pro", sans-serif;
   font-size: x-large;
+  overflow: hidden;
+}
+
+.fnt_2 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: x-large;
+  position: relative;
+  top: -250px;
+  overflow: hidden;
 }
 
 .ban1 {
   width: 1518px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .ban2 {
   background-color: rgb(255, 255, 255);
-  height: 1000px;
+  height: 800px;
+  overflow: hidden;
 }
 
-.ban3 {
-  width: 1518px;
+.ban3_back {
+  /* width: 1518px; */
+  background-image: url(../components/images/banner3.jpg);
+  background-size: cover;
+
+  
 }
 
 .Intra {
@@ -28,15 +50,25 @@
 }
 
 .Inter {
+ 
   height: 550px;
   position: relative;
-  top: -390px;
+  top: 190px;
   left: 800px;
+}
+
+.service_use{
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 70px;
+  position: relative;
+  top: 60px;
+  left: 350px;
+
 }
 
 .dot_inter {
   position: relative;
-  top: -750px;
+  top: -190px;
   left: 220px;
   transform: rotate(90deg);
 }
@@ -55,19 +87,20 @@
 .abstract {
   position: absolute;
   right: 20%;
-  top: 40%;
+  top: 35%;
   max-width: 500px;
 }
 
 .abstract h1 {
-  font-size: xx-large;
+
   margin: 10px 0;
   transition: color 0.5s;
 }
 
 .abstract p {
   margin: 5px 0;
-  font-size: x-large;
+  font-weight: 600;
+  text-align: justify;
 }
 
 .zoom {
@@ -79,10 +112,13 @@
 }
 
 .intra {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
   position: absolute;
   right: 10%;
   top: 267%;
   max-width: 500px;
+  text-align: justify;
 }
 
 .intra p {
@@ -98,9 +134,320 @@
 }
 
 .inter {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
   position: absolute;
   left: 10%;
   max-width: 500px;
   top: 410%;
   font-size: x-large;
+  text-align: justify;
+}
+
+.card1{
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  height: 400px;
+  width: 300px;
+  background-color: rgb(216,211,195);
+  transition: 0.5s;
+}
+
+.oface{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.oface1{
+  text-align: center;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+
+.oface1 h2{
+  font-family: 'Source Sans Pro';
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+.oface1 p{
+  font-family: 'Source Sans Pro';
+  text-align: center;
+}
+
+.oface2{
+  background-color: rgb(169, 154, 105);
+  transition: 0.5s;
+}
+
+.oface2 h2{
+font-family: 'Source Sans Pro';
+font-size: 120px;
+color: rgb(255, 255, 255);
+transition: 0.5s;
+}
+
+.card1:hover .oface2{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top:20%;
+  left:38%;
+  background-color: #fff;
+  border-radius: 1px solid blue;
+}
+
+.card1:hover .oface2 h2{
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+
+}
+
+.card2{
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  height: 400px;
+  width: 300px;
+  background-color: rgb(216,211,195);
+  transition: 0.5s;
+}
+
+.iface{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.iface1{
+  text-align: center;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+
+.iface1 h2{
+  font-family: 'Source Sans Pro';
+  text-transform: uppercase;
+  margin-top: 35px;
+}
+
+.iface1 p{
+  font-family: 'Source Sans Pro';
+  text-align: center;
+}
+
+.iface2{
+  background-color: rgb(169, 154, 105);
+  transition: 0.5s;
+}
+
+.iface2 h2{
+font-family: 'Source Sans Pro';
+font-size: 120px;
+color: rgb(255, 255, 255);
+transition: 0.5s;
+}
+
+.card2:hover .iface2{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top:20%;
+  left:38%;
+  background-color: #fff;
+  border-radius: 1px solid blue;
+}
+
+.card2:hover .iface2 h2{
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.card3{
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  height: 400px;
+  width: 300px;
+  background-color: rgb(216,211,195);
+  transition: 0.5s;
+}
+
+.rface{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rface1{
+  text-align: center;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+
+.rface1 h2{
+  font-family: 'Source Sans Pro';
+  text-transform: uppercase;
+  margin-top: 35px;
+}
+
+.rface1 p{
+  font-family: 'Source Sans Pro';
+  text-align: center;
+}
+
+.rface2{
+  background-color: rgb(169, 154, 105);
+  transition: 0.5s;
+}
+
+.rface2 h2{
+font-family: 'Source Sans Pro';
+font-size: 120px;
+color: rgb(255, 255, 255);
+transition: 0.5s;
+}
+
+.card3:hover .rface2{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top:20%;
+  left:38%;
+  background-color: #fff;
+  border-radius: 1px solid blue;
+}
+
+.card3:hover .rface2 h2{
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.card4{
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  height: 400px;
+  width: 300px;
+  background-color: rgb(216,211,195);
+  transition: 0.5s;
+}
+
+.wface{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wface1{
+  text-align: center;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+
+.wface1 h2{
+  font-family: 'Source Sans Pro';
+  text-transform: uppercase;
+  margin-top: 35px;
+}
+
+.wface1 p{
+  font-family: 'Source Sans Pro';
+  text-align: center;
+}
+
+.wface2{
+  background-color: rgb(169, 154, 105);
+  transition: 0.5s;
+}
+
+.wface2 h2{
+font-family: 'Source Sans Pro';
+font-size: 120px;
+color: rgb(255, 255, 255);
+transition: 0.5s;
+}
+
+.card4:hover .wface2{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top:20%;
+  left:38%;
+  background-color: #fff;
+  border-radius: 1px solid blue;
+}
+
+.card4:hover .wface2 h2{
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.procedure{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.procedure_blk{
+  background-image: url(../components/images/banner2.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 90px;
+
+}
+
+.rd_map{
+  font-family: 'Source Sans Pro';
+font-size: 80px;
+padding-bottom: 20px;
+padding-top: 30px;
+}
+
+.rd_map_head{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.rd_img{
+  padding-top: 10px;
+  height: 150px;
+  padding-right: 30px;
 }

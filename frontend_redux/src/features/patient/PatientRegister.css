@@ -34,11 +34,20 @@
 
 .pat_reg_head{
   margin-top: 50px;
-  margin-left: 100px;
+  margin-left: 60px;
   width: 800px;
   font-family: 'Merriweather', serif;
   font-size: 100px;
   font-weight: 800;
+}
+.pat_reg_us_name{
+  margin-left: 120px;
+  width: 800px;
+  font-family: 'Merriweather', serif;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 800;
+  width: fit-content;
 }
 
 .pat_msg_title{
@@ -58,7 +67,7 @@
   margin-right: auto;
   height: 100%;
   padding-left: 10px;
-  color: #9e8b59;
+  color: #ffffff;
   animation: spin_words 6s infinite;
 }
 
@@ -90,9 +99,10 @@
 }
 
 .form_div {
+  position: relative;
   display: flex;
   flex-direction: row;
-  right: 0;
+  right: -100px;
   backdrop-filter: blur(5px);
   width: 400px;
   margin-left: 0px;
@@ -173,8 +183,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 .imag_error {
+  padding-top: 30px;
   position: relative;
   top: -120px;
   height: 600px;
@@ -226,9 +238,11 @@
 }
 
 .err_btn button {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
   background: transparent;
   border: transparent;
   color: white;
-  font-size: large;
   cursor: pointer;
 }

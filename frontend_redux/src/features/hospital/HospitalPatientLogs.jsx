@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./HospitalPatientLogs.css";
 import { useDispatch, useSelector } from "react-redux";
+import nofile from "./images/no_file.png";
 import {
   fetchPatient,
   getPatient,
@@ -15,6 +16,7 @@ import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import { Avatar } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
 import HospOpsNav from "./HospOpsNav"
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Merriweather+Sans:ital,wght@0,700;0,800;1,700;1,800&family=Merriweather:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet"></link>
 
 const HospitalPatientLogs = () => {
   const { id: patientId } = useParams();
@@ -53,14 +55,15 @@ const HospitalPatientLogs = () => {
   const patientList = currentPatient ? (
     <div className="log_det_back">
       <section className="avtSectionHosp">
-        <Avatar sx={{ bgcolor: deepOrange[500] }}>
+        <Avatar sx={{ bgcolor: deepOrange[500],width: 96, height: 96, fontWeight:800,fontSize:50,fontFamily:'Merriweather Sans' }}>
           {currentPatient?.firstName[0]}
         </Avatar>
-        <p>{currentPatient?.firstName}</p>
       </section>
-      <h1 className="det_name">
-        {currentPatient.firstName} {currentPatient.lastName}
-      </h1>
+      <div className="det_name">
+        <h1 className="name">
+          {currentPatient.firstName} {currentPatient.lastName}
+        </h1>
+        </div>
       <div className="table_disp">
         <table className="table_disp">
           <tr>
@@ -108,7 +111,7 @@ const HospitalPatientLogs = () => {
   );
 
   const patientRecordsList =
-    patientRecords?.length !== 0 ? (
+    patientRecords !== undefined ? (
       <section>
         <ul>
           {patientRecords?.map((record) => (
@@ -133,8 +136,12 @@ const HospitalPatientLogs = () => {
         </ul>
       </section>
     ) : (
-      <p>Patient does not have any records</p>
+      <div className="no_rec">
+      <img className="no_rec_img" src={nofile} alt="txt"></img>
+      <p className="no_rec_warn">Patient does not have any records!</p>
+      </div>
     );
+    console.log(patientRecords)
   return (
     <section>
       <HospOpsNav/>

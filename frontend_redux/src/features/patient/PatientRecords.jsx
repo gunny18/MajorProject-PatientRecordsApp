@@ -10,6 +10,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import './PatientRecords.css'
+import nofile from "./images/no_file.png";
 
 const PatientRecords = () => {
   const currentPatient = useSelector(getPatient);
@@ -60,7 +61,10 @@ const PatientRecords = () => {
       ))}
     </ul>
   ) : (
+    <div>
+    <img className="no_file_img" src={nofile} alt="txt"></img>
     <p className="no_rec_msg">There are no records present!</p>
+    </div>
   );
   return (
     <div className="my_rec">

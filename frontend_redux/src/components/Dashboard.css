@@ -3,13 +3,13 @@
 
 .Dashboard{
     background-image: url(../components/images/dash_back.png);
-    background-size: cover;
+    background-size: contain;
 }
 .msg{
     position: absolute;
     top:195px;
     /* left:950px; */
-    right: 0;
+    right: 140px;
     width: 420px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 30px;

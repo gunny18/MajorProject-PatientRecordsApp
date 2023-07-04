@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getHospitalStatus, registerHospital } from "./hospitalSlice";
 import "./HospitalRegister.css";
-import hospRectImg from "./images/hosp_port_head.png"
+import hospRectImg from "./images/hosp_port_he.png"
 import hospPortImg from "./images/hosp_port_img.png"
 import logo from "./images/logo.png"
 

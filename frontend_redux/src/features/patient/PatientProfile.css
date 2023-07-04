@@ -12,17 +12,21 @@
   background-repeat: no-repeat;
 }
 .det_us_name {
-  display: block;
-  width: fit-content;
-  /* margin-right: 100px; */
   position: relative;
-  left: 552px;
-  top: 190px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  margin-right: 100px;
+  left: 510px;
+  top: 250px;
   font-family: "Merriweather Sans", sans-serif;
   font-weight: 800;
   font-size: 60px;
+  /* padding-left: 100px; */
   padding-bottom: 30px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .det_tab {
@@ -41,6 +45,12 @@
 
 .avtSection {
   position: absolute;
-  left: 37%;
-  top: 25%;
+  top: 28%;
+  left: 57%;
+}
+
+.table_disp_cont{
+  position: absolute;
+  top:220px
+
 }

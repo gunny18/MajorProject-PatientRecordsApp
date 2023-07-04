@@ -11,9 +11,8 @@
 }
 
 .logo{
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
+    width: 250px;
+
 }
 
 .register_rect{
@@ -33,7 +32,7 @@
     min-height: 350px;
     padding: 20px;
     position: absolute;
-    right: 550px;
+    right: 800px;
     top: 23%;
     background-color: rgb(216,211,195);
     border-radius: 20px;
@@ -68,6 +67,10 @@
     border: transparent;
     color: white;
     background-color: rgb(168, 157, 120);
+    cursor: pointer;
+}
+.register__button:hover{
+    background-color:rgb(169, 154, 105) ;
 }
 
 .register_heading{
@@ -89,4 +92,10 @@
   background-color: rgb(201, 98, 98);
   color: black;
   border: 1px solid red;
+}
+
+.sign_up{
+    height: 600px;
+    position: absolute;
+    right: 50px;
 }

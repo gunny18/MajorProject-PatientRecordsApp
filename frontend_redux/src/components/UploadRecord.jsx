@@ -69,7 +69,10 @@ const UploadRecord = () => {
       {showUploaded && <p className="uploadedElement">Uploaded Record, Redirecting to options page....</p>}
       <div>
         <h1 className="nameDets">
-          {currentPatient?.firstName} {currentPatient?.patientId}
+          {currentPatient?.firstName} {currentPatient?.lastName} <br/>
+        </h1>
+        <h1 className="nameID">
+          {currentPatient?.patientId}
         </h1>
         <form className="upload_form" onSubmit={handleUploadRecord}>
           <input
